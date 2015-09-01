@@ -1,0 +1,6 @@
+{
+  "name": "FlankLayout",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FlankLayout.js"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "LeftFlank",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LeftFlank.js"
+}

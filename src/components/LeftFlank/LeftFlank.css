@@ -1,0 +1,15 @@
+@import '../variables.css';
+
+.LeftFlank {
+
+}
+
+.LeftFlank-container {
+  width: 2rem;
+  padding: 2rem;
+}
+
+.LeftFlank-banner {
+  text-align: center;
+  font-variant: small-caps;
+}

@@ -4,9 +4,7 @@ import React, { PropTypes } from 'react';
 import styles from './App.css';
 import withContext from '../../decorators/withContext';
 import withStyles from '../../decorators/withStyles';
-import Header from '../Header';
-import Feedback from '../Feedback';
-import Footer from '../Footer';
+import FlankLayout from '../FlankLayout';
 
 @withContext
 @withStyles(styles)
@@ -17,13 +15,14 @@ class App {
     error: PropTypes.object
   };
 
+  // TODO: Move propTypes and content page display logic into layout
   render() {
     return !this.props.error ? (
       <div>
-        <Header />
-        {this.props.children}
-        <Feedback />
-        <Footer />
+        <FlankLayout />
+        <span style={{display:'none'}}>
+          {this.props.children}
+        </span>
       </div>
     ) : this.props.children;
   }

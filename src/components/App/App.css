@@ -5,6 +5,15 @@
 @import '../variables.css';
 
 /*
+ * Customizations
+ * ========================================================================== */
+
+@font-face {
+  font-family: 'Akkurat';
+  src: url('/akkurat-regular.otf') format('otf');
+}
+
+/*
  * Base styles
  * ========================================================================== */
 

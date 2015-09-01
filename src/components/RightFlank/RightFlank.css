@@ -1,0 +1,19 @@
+@import '../variables.css';
+
+.RightFlank {
+
+}
+
+.RightFlank-container {
+  width: 3rem;
+  padding: 2rem;
+}
+
+.RightFlank-banner {
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.RightFlank-bannerFrequency {
+  font-size: large;
+}
