@@ -1,11 +1,31 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .FlankLayout {
 
 }
 
 .FlankLayout-container {
-
+  display: flex;
 }
 
-.FlankLayout-containerLayout {
-  align-items: center;
+.FlankLayout-leftFlank {
+  background-color: #eee;
+  flex: 0 0 5rem;
+  max-width: 5rem;
+  order: -1;
+}
+
+.FlankLayout-rightFlank {
+  background-color: #ddd;
+  flex: 0 0 5rem;
+  max-width: 5rem;
+}
+
+.FlankLayout-appCanvas {
+  flex: 1;
+  min-height: 100vh;
 }

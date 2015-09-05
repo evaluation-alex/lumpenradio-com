@@ -12,7 +12,12 @@ class LeftFlank {
     return (
       <div className="LeftFlank">
         <div className="LeftFlank-container">
-          <h1 className="LeftFlank-banner">L<wbr />u<wbr />m<wbr />p<wbr />e<wbr />n<wbr /> R<wbr />a<wbr />d<wbr />i<wbr />o</h1>
+          <div className="LeftFlank-banner">
+            <h1>
+              <p>L<wbr />u<wbr />m<wbr />p<wbr />e<wbr />n</p>
+              <p>R<wbr />a<wbr />d<wbr />i<wbr />o</p>
+            </h1>
+          </div>
         </div>
       </div>
     );
