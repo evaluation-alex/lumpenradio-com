@@ -7,6 +7,7 @@ import Link from '../Link';
 import LeftFlank from '../LeftFlank';
 import RightFlank from '../RightFlank';
 import AppCanvas from '../AppCanvas';
+import Navigation from '../Navigation';
 
 @withStyles(styles)
 class FlankLayout {
@@ -21,14 +22,19 @@ class FlankLayout {
             </main>
           </div>
           <div className="FlankLayout-leftFlank">
-            <nav>
+            <header>
               <LeftFlank />
+            </header>
+          </div>
+          <div className="FlankLayout-navigation">
+            <nav>
+              <Navigation />
             </nav>
           </div>
           <div className="FlankLayout-rightFlank">
-            <nav>
+            <footer>
               <RightFlank />
-            </nav>
+            </footer>
           </div>
         </div>
       </div>

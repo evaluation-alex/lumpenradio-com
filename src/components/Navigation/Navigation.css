@@ -1,8 +1,13 @@
 /* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
+.Navigation {
+  margin-top: 5rem;
+}
+
 .Navigation-link {
-  display: inline-block;
+  display: block;
   padding: 3px 8px;
+  margin: 0.5rem;
   text-decoration: none;
   font-size: 1.125em; /* ~18px */
 }

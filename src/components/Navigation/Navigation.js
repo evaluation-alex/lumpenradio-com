@@ -15,13 +15,16 @@ class Navigation {
 
   render() {
     return (
-      <div className={classNames(this.props.className, 'Navigation')} role="navigation">
-        <a className="Navigation-link" href="/about" onClick={Link.handleClick}>About</a>
-        <a className="Navigation-link" href="/contact" onClick={Link.handleClick}>Contact</a>
-        <span className="Navigation-spacer"> | </span>
-        <a className="Navigation-link" href="/login" onClick={Link.handleClick}>Log in</a>
-        <span className="Navigation-spacer">or</span>
-        <a className="Navigation-link Navigation-link--highlight" href="/register" onClick={Link.handleClick}>Sign up</a>
+      <div className={classNames(this.props.className, 'Navigation')}>
+        <a className="Navigation-link Navigation-link--highlight" href="/current" onClick={Link.handleClick}>Current</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/schedule" onClick={Link.handleClick}>Schedule</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/shows" onClick={Link.handleClick}>Shows</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/news" onClick={Link.handleClick}>News</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/events" onClick={Link.handleClick}>Events</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/info" onClick={Link.handleClick}>Info</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/sponsor" onClick={Link.handleClick}>Sponsor</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/shop" onClick={Link.handleClick}>Shop</a>
+        <a className="Navigation-link Navigation-link--highlight" href="http://www.lumpen.com" onClick={Link.handleClick}>Lumpen.com</a>
       </div>
     );
   }

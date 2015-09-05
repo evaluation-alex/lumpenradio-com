@@ -12,7 +12,12 @@ class AppCanvas {
     return (
       <div className="AppCanvas">
         <div className="AppCanvas-container">
-          <h1 className="AppCanvas-banner">Listen</h1>
+          <div className="AppCanvas-header">
+            <h1>Listen</h1>
+          </div>
+          <div className="AppCanvas-body">
+
+          </div>
         </div>
       </div>
     );

@@ -2,6 +2,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url('/abstract-8.jpg');
+  background-size: cover;
 }
 
 .FlankLayout {
@@ -13,14 +15,20 @@ body {
 }
 
 .FlankLayout-leftFlank {
-  background-color: #eee;
+  /*background-color: #eee;*/
   flex: 0 0 5rem;
-  max-width: 5rem;
+  order: -2;
+}
+
+.FlankLayout-navigation {
+  flex: 0 0 10rem;
   order: -1;
+  /*background-color: #ccc;*/
+  background-color: rgba(255,255,255,0.1);
 }
 
 .FlankLayout-rightFlank {
-  background-color: #ddd;
+  /*background-color: #ddd;*/
   flex: 0 0 5rem;
   max-width: 5rem;
 }
