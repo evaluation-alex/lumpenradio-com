@@ -1,0 +1,15 @@
+@import '../variables.css';
+
+.Features {
+
+}
+
+.Features-container {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.Features-banner {
+  text-align: center;
+  font-variant: small-caps;
+}

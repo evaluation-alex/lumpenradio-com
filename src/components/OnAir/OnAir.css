@@ -1,0 +1,15 @@
+@import '../variables.css';
+
+.OnAir {
+
+}
+
+.OnAir-container {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.OnAir-banner {
+  text-align: center;
+  font-variant: small-caps;
+}

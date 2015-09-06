@@ -5,6 +5,10 @@ body {
   background-image: url('/abstract-8.jpg');
   background-size: cover;
 }
+@font-face {
+  font-family: "Akkurat";
+  src: url("/akkurat-regular.otf");
+}
 
 .FlankLayout {
 

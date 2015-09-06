@@ -6,6 +6,24 @@
 
 .AppCanvas-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
+
+.AppCanvas-bodyContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.AppCanvas-bodyNewsAndFeatures {
+  flex: 1;
+}
+
+.AppCanvas-bodyFeatures {
+  flex: 1;
+}
+
+.AppCanvas-bodyOnAir {
+  flex: 1;
+}
+

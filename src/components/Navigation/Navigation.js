@@ -16,15 +16,15 @@ class Navigation {
   render() {
     return (
       <div className={classNames(this.props.className, 'Navigation')}>
-        <a className="Navigation-link Navigation-link--highlight" href="/current" onClick={Link.handleClick}>Current</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/schedule" onClick={Link.handleClick}>Schedule</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/shows" onClick={Link.handleClick}>Shows</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/news" onClick={Link.handleClick}>News</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/events" onClick={Link.handleClick}>Events</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/info" onClick={Link.handleClick}>Info</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/sponsor" onClick={Link.handleClick}>Sponsor</a>
-        <a className="Navigation-link Navigation-link--highlight" href="/shop" onClick={Link.handleClick}>Shop</a>
-        <a className="Navigation-link Navigation-link--highlight" href="http://www.lumpen.com" onClick={Link.handleClick}>Lumpen.com</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/current" onClick={Link.handleClick}>current</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/schedule" onClick={Link.handleClick}>schedule</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/shows" onClick={Link.handleClick}>shows</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/news" onClick={Link.handleClick}>news</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/events" onClick={Link.handleClick}>events</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/info" onClick={Link.handleClick}>info</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/sponsor" onClick={Link.handleClick}>sponsor</a>
+        <a className="Navigation-link Navigation-link--highlight" href="/shop" onClick={Link.handleClick}>shop</a>
+        <a className="Navigation-link Navigation-link--highlight" href="http://www.lumpen.com" onClick={Link.handleClick}>lumpen.com</a>
       </div>
     );
   }

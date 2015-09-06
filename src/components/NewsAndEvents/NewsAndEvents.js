@@ -4,6 +4,14 @@ import React from 'react';
 import styles from './NewsAndEvents.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
+import NewsList from '../NewsList';
+
+let data = [
+  {title: 'New Shows Added!', linkHref: "http://habd.as"},
+  {title: 'WLPN is Lumpen Radio', linkHref: "http://habd.as"},
+  {title: 'Lumpen Radio is Here', linkHref: "http://habd.as"},
+  {title: 'News Item Number 4', linkHref: "http://habd.as"}
+]
 
 @withStyles(styles)
 class NewsAndEvents {
@@ -12,17 +20,11 @@ class NewsAndEvents {
     return (
       <div className="NewsAndEvents">
         <div className="NewsAndEvents-container">
-          <div className="NewsAndEvents-banner">
-            <h1>
-              <p>L<wbr />u<wbr />m<wbr />p<wbr />e<wbr />n</p>
-              <p>R<wbr />a<wbr />d<wbr />i<wbr />o</p>
-            </h1>
-          </div>
+          <NewsList data={data} />
         </div>
       </div>
     );
   }
-
 }
 
 export default NewsAndEvents;
