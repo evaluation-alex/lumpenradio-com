@@ -12,11 +12,11 @@ class RightFlank {
     return (
       <div className="RightFlank">
         <div className="RightFlank-container">
-          <h1 className="RightFlank-banner">
-            <p><strong>W<wbr />L<wbr />P<wbr />N</strong></p>
-            <p className="RightFlank-bannerFrequency">1<wbr />0<wbr />5<wbr />.<wbr />5</p>
-            <p>F<wbr />M</p>
-          </h1>
+          <div className="RightFlank-banner">
+            <h1 className="RightFlank-banner__h1">
+              WLPN 105.5 FM
+            </h1>
+          </div>
         </div>
       </div>
     );

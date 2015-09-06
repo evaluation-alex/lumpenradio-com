@@ -16,7 +16,12 @@ class AppCanvas {
             <h1>Listen</h1>
           </div>
           <div className="AppCanvas-body">
-
+            <div className="AppCanvas-newsAndEvents">
+            </div>
+            <div className="AppCanvas-features">
+            </div>
+            <div className="AppCanvas-onAir">
+            </div>
           </div>
         </div>
       </div>

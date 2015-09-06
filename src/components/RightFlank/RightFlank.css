@@ -5,15 +5,17 @@
 }
 
 .RightFlank-container {
-  padding: 1rem;
+  padding: 5rem 1rem;
   font-size: 1.5rem;
 }
 
 .RightFlank-banner {
   text-align: center;
   font-variant: small-caps;
+  background-image: url('/wlpn_flanks-02.svg');
+  height: 550px;
 }
 
-.RightFlank-bannerFrequency {
-  font-size: large;
+.RightFlank-banner__h1 {
+  visibility: hidden;
 }

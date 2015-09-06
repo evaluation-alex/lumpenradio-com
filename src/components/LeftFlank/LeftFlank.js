@@ -13,9 +13,8 @@ class LeftFlank {
       <div className="LeftFlank">
         <div className="LeftFlank-container">
           <div className="LeftFlank-banner">
-            <h1>
-              <p>L<wbr />u<wbr />m<wbr />p<wbr />e<wbr />n</p>
-              <p>R<wbr />a<wbr />d<wbr />i<wbr />o</p>
+            <h1 className="LeftFlank-banner__h1">
+              Lumpen Radio
             </h1>
           </div>
         </div>
