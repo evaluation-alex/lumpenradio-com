@@ -6,7 +6,6 @@
 
 .NewsItem-container {
   border-top: 2px solid black;
-  padding: 18px 0;
 }
 
 .NewsItem-link {
@@ -21,5 +20,7 @@
 .NewsItem-link,
 .NewsItem-link:active,
 .NewsItem-link:visited {
+  padding: 14px 0;
+  display: block;
   color: #000;
 }
