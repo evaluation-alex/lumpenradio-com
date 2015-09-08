@@ -20,7 +20,7 @@
 .NewsItem-link,
 .NewsItem-link:active,
 .NewsItem-link:visited {
-  padding: 14px 0;
   display: block;
+  padding: 14px 0;
   color: #000;
 }

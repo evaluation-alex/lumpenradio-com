@@ -17,3 +17,23 @@
 .NewsLIst-newsItems {
 
 }
+
+.NewsList-moreLink {
+  display: block;
+  text-align: left;
+  padding: 5px 5px 5px 0;
+  border-top: 2px solid black;
+  font-size: 14px;
+  color: #FF5744;
+  text-decoration: none;
+}
+
+.NewsList-moreLink,
+.NewsList-moreLink:active,
+.NewsList-moreLink:visited {
+  color: rgba(255, 87, 68, 1);
+}
+
+.NewsList-moreLink:hover {
+  text-decoration: underline;
+}

@@ -20,7 +20,7 @@
 .EventItem-link,
 .EventItem-link:active,
 .EventItem-link:visited {
-  padding: 14px 0;
   display: block;
+  padding: 14px 0;
   color: #000;
 }

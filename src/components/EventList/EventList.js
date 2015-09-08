@@ -22,6 +22,7 @@ class EventList {
           <div className="EventList-newsItems">
             {eventItems}
           </div>
+          <a className="EventList-moreLink" href="/events">More Events →</a>
         </div>
       </div>
     );

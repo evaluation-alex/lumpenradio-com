@@ -1,0 +1,55 @@
+@import '../variables.css';
+
+.FeatureItem {
+  border: 2px solid black;
+  margin-bottom: 22px;
+  font-size: 14px;
+}
+
+.FeatureItem-banner {
+  border-bottom: 2px solid black;
+  padding: 3px 8px;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.FeatureItem-content {
+  background-color: white;
+}
+
+.FeatureItem-hero {
+  text-align: center;
+}
+
+.FeatureItem-heroImage {
+  margin: 2rem 2rem 0;
+}
+
+.FeatureItem-headline {
+  text-align: center;
+  font-family: 'HelveticaNeue-Light', sans-serif;
+}
+
+.FeatureItem-headlineLink {
+  text-decoration: none;
+}
+
+.FeatureItem-headlineLink,
+.FeatureItem-headlineLink:active,
+.FeatureItem-headlineLink:visited {
+  color: rgba(255, 87, 68, 1);
+}
+
+.FeatureItem-headlineLink:hover {
+  text-decoration: underline;
+}
+
+.FeatureItem-headlineHeader {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+.FeatureItem-excerpt {
+  padding: 0 1rem 1rem 1rem;
+  font-size: 16px;
+}

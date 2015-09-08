@@ -1,0 +1,22 @@
+@import '../variables.css';
+
+.FeatureList {
+
+}
+
+.FeatureList-container {
+}
+
+.FeatureList-header {
+  color: #FF5744;
+  font-size: 14px;
+}
+
+.FeatureList-moreLink {
+  text-align: left;
+  padding: 5px 5px 5px 0;
+  border-top: 2px solid black;
+  font-size: 14px;
+  color: #FF5744;
+  text-decoration: none;
+}

@@ -22,6 +22,7 @@ class NewsList {
           <div className="NewsList-newsItems">
             {newsItems}
           </div>
+          <a className="NewsList-moreLink" href="/news">More News →</a>
         </div>
       </div>
     );
