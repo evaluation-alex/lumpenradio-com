@@ -1,57 +1,51 @@
 @import '../variables.css';
 
-.FeatureItem {
+.OnAirItem {
   border: 2px solid black;
   margin-bottom: 22px;
   font-size: 14px;
 }
 
-.FeatureItem-banner {
+.OnAirItem-banner {
   border-bottom: 2px solid black;
   padding: 3px 8px;
   text-align: center;
   font-variant: small-caps;
 }
 
-.FeatureItem-content {
+.OnAirItem-content {
   background-color: white;
 }
 
-.FeatureItem-hero {
+.OnAirItem-hero {
   text-align: center;
 }
 
-.FeatureItem-heroImage {
+.OnAirItem-heroImage {
   margin: 2rem 2rem 0;
 }
 
-.FeatureItem-headline {
+.OnAirItem-headline {
   text-align: center;
   font-family: 'HelveticaNeue-Light', sans-serif;
 }
 
-.FeatureItem-headlineLink {
+.OnAirItem-headlineLink {
   text-decoration: none;
 }
 
-.FeatureItem-headlineLink,
-.FeatureItem-headlineLink:active,
-.FeatureItem-headlineLink:visited {
+.OnAirItem-headlineLink,
+.OnAirItem-headlineLink:active,
+.OnAirItem-headlineLink:visited {
   color: rgba(255, 87, 68, 1);
 }
 
-.FeatureItem-headlineLink:hover {
+.OnAirItem-headlineLink:hover {
   text-decoration: underline;
 }
 
-.FeatureItem-headlineHeader {
+.OnAirItem-headlineHeader {
   font-size: 20px;
-  margin-top: 0;
-  padding-top: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.FeatureItem-excerpt {
-  padding: 0 1rem 1rem 1rem;
-  font-size: 16px;
+  margin: 0 1rem;
+  padding: 1rem 0;
 }

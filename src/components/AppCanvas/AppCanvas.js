@@ -29,6 +29,7 @@ class AppCanvas {
               <div className="AppCanvas-bodyOnAir">
                 <OnAir />
               </div>
+              <div className="AppCanvas-bodyNoMansLand"></div>
             </div>
           </div>
         </div>

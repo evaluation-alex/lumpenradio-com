@@ -20,10 +20,13 @@
 }
 
 .AppCanvas-bodyFeatures {
-  flex: 4;
+  flex: 3;
 }
 
 .AppCanvas-bodyOnAir {
   flex: 1;
 }
 
+.AppCanvas-bodyNoMansLand {
+  flex: 1;
+}
