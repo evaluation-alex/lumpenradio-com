@@ -1,19 +1,19 @@
 @import '../variables.css';
 
-.NewsList {
+.EventList {
 
 }
 
-.NewsList-container {
+.EventList-container {
   font-variant: small-caps;
   text-align: center;
 }
 
-.NewsList-header {
+.EventList-header {
   color: #FF5744;
   font-size: 14px;
 }
 
-.NewsLIst-newsItems {
+.EventLIst-newsItems {
 
 }

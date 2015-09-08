@@ -13,10 +13,7 @@ class Features {
       <div className="Features">
         <div className="Features-container">
           <div className="Features-banner">
-            <h1>
-              <p>L<wbr />u<wbr />m<wbr />p<wbr />e<wbr />n</p>
-              <p>R<wbr />a<wbr />d<wbr />i<wbr />o</p>
-            </h1>
+            <h1>Features</h1>
           </div>
         </div>
       </div>

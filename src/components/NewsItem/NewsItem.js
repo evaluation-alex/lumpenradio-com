@@ -1,5 +1,3 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 import React from 'react';
 import styles from './NewsItem.css';
 import withStyles from '../../decorators/withStyles';
@@ -13,7 +11,7 @@ class NewsItem {
     return (
       <div className="NewsItem">
         <div className="NewsItem-container">
-          <a href={newsItem.linkHref}>{newsItem.title}</a>
+          <a className="NewsItem-link" href={newsItem.linkHref}>{newsItem.title}</a>
         </div>
       </div>
     );

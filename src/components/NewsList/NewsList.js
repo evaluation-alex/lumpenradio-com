@@ -1,5 +1,3 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 import React from 'react';
 import styles from './NewsList.css';
 import withStyles from '../../decorators/withStyles';
@@ -18,7 +16,12 @@ class NewsList {
     return (
       <div className="NewsList">
         <div className="NewsList-container">
-          {newsItems}
+          <div className="NewsList-header">
+            <h1>News</h1>
+          </div>
+          <div className="NewsList-newsItems">
+            {newsItems}
+          </div>
         </div>
       </div>
     );

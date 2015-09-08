@@ -13,10 +13,7 @@ class OnAir {
       <div className="OnAir">
         <div className="OnAir-container">
           <div className="OnAir-banner">
-            <h1>
-              <p>L<wbr />u<wbr />m<wbr />p<wbr />e<wbr />n</p>
-              <p>R<wbr />a<wbr />d<wbr />i<wbr />o</p>
-            </h1>
+            <h1>On Air</h1>
           </div>
         </div>
       </div>

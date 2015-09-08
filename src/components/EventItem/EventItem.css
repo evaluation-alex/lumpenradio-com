@@ -1,25 +1,25 @@
 @import '../variables.css';
 
-.NewsItem {
+.EventItem {
 
 }
 
-.NewsItem-container {
+.EventItem-container {
   border-top: 2px solid black;
   padding: 18px 0;
 }
 
-.NewsItem-link {
+.EventItem-link {
   padding: 3px 8px;
   text-decoration: none;
 }
 
-.NewsItem-link:hover {
+.EventItem-link:hover {
   text-decoration: underline;
 }
 
-.NewsItem-link,
-.NewsItem-link:active,
-.NewsItem-link:visited {
+.EventItem-link,
+.EventItem-link:active,
+.EventItem-link:visited {
   color: #000;
 }

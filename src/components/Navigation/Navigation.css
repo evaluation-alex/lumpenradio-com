@@ -1,25 +1,25 @@
-/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 .Navigation {
   margin-top: 5rem;
 }
 
 .Navigation-link {
   display: block;
-  padding: 3px 8px;
-  margin: 0.5rem;
+  margin: 5px;
+  border: 2px solid #FF5744;
   text-decoration: none;
-  font-size: 1.125em; /* ~18px */
+  font-variant: small-caps;
+  text-align: center;
+  letter-spacing: 0.15em;
 }
 
 .Navigation-link,
 .Navigation-link:active,
 .Navigation-link:visited {
-  color: rgba(255, 255, 255, .6);
+  color: rgba(255, 87, 68, 1);
 }
 
 .Navigation-link:hover {
-  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
 }
 
 .Navigation-link--highlight {
@@ -27,16 +27,11 @@
   margin-left: 8px;
   border-radius: 3px;
   background: rgba(0, 0, 0, .15);
+  background-color: #FF5744;
   color: #fff;
-  text-align: center;
-  font-variant: small-caps;
-  letter-spacing: 0.1em;
 }
 
 .Navigation-link--highlight:hover {
-  background: rgba(0, 0, 0, .3);
+  background-color: #FF5744;
 }
 
-.Navigation-spacer {
-  color: rgba(255, 255, 255, .3);
-}

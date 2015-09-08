@@ -1,0 +1,6 @@
+{
+  "name": "EventItem",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./EventItem.js"
+}
