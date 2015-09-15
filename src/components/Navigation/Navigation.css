@@ -6,28 +6,33 @@
   display: block;
   margin: 5px;
   border: 2px solid #FF5744;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   font-variant: small-caps;
   text-align: center;
   letter-spacing: 0.15em;
+  border-radius: 3px;
+  background-color: rgba(255, 87, 68, 0.15);
 }
 
 .Navigation-link,
 .Navigation-link:active,
 .Navigation-link:visited {
-  color: rgba(255, 87, 68, 1);
+  color: #fff;
 }
 
 .Navigation-link:hover {
-  text-decoration: underline;
+  background-color: rgba(255, 87, 68, 0.45);
 }
 
 .Navigation-link--highlight {
   margin-right: 8px;
   margin-left: 8px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, .15);
+  background: rgba(0, 0, 0, 0.15);
   background-color: #FF5744;
+}
+.Navigation-link.Navigation-link--highlight {
   color: #fff;
 }
 
