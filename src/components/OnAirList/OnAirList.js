@@ -17,7 +17,7 @@ class OnAirList {
       <div className="OnAirList">
         <div className="OnAirList-container">
           <div className="OnAirList-header">
-            <h1>OnAir</h1>
+            <h1>On Air</h1>
           </div>
           <div className="OnAirList-items">
             {items}

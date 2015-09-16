@@ -4,14 +4,43 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 import NewsItem from '../NewsItem';
 
+import NewsStore from '../../stores/NewsStore';
+import NewsActions from '../../actions/NewsActions';
+
 @withStyles(styles)
 class NewsList {
+  constructor(props) {
+    this.state = NewsStore.getState();
+  }
+
+  componentDidMount() {
+    NewsStore.listen(this.onChange);
+    NewsActions.fetchNews();
+  }
+
+  componentWillUnmount() {
+    NewsStore.unlisten(this.onChange);
+  }
 
   render() {
-    var newsItems = this.props.data.map( (newsItem) => {
+    if (this.state.errorMessage) {
+      return (
+        <div>Something is wrong</div>
+      );
+    }
+
+    if (!this.state.news.length) {
+      return (
+        <div>
+          Loading...
+        </div>
+      );
+    }
+
+    let newsItems = this.state.news.map( (newsItem) => {
       return (
         <NewsItem data={newsItem} />
-      )
+      );
     });
     return (
       <div className="NewsList">
@@ -27,8 +56,6 @@ class NewsList {
       </div>
     );
   }
-
 }
 
 export default NewsList;
-
