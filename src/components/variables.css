@@ -1,3 +1,5 @@
+/* @see https://github.com/twbs/bootstrap/blob/master/less/variables.less */
+
 :root {
 
   /*
@@ -11,11 +13,15 @@
   --gray-light:            color(black lightness(+46.7%)); /* #777 */
   --gray-lighter:          color(black lightness(+93.5%)); /* #eee */
 
+  --brand-primary:         #FF5744;
+
   /*
    * Typography
    * ======================================================================== */
 
   --font-family-base:      'Akkurat', 'Segoe UI', 'HelveticaNeue-Light', sans-serif;
+
+  --font-size-h1:          14px;
 
   /*
    * Layout

@@ -8,8 +8,8 @@
 }
 
 .OnAirList-header {
-  color: #FF5744;
-  font-size: 14px;
+  color: var(--brand-primary);
+  font-size: var(--font-size-h1);
 }
 
 .OnAirList-moreLink {

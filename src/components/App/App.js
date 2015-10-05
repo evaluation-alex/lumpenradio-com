@@ -19,10 +19,7 @@ class App extends Component {
   render() {
     return !this.props.error ? (
       <div>
-        <FlankLayout />
-        <span style={{display:'none'}}>
-          {this.props.children}
-        </span>
+        <FlankLayout children={this.props.children} />
       </div>
     ) : this.props.children;
   }

@@ -8,6 +8,8 @@ import AltContainer from 'alt/AltContainer';
 import NewsStore from '../../stores/NewsStore';
 import NewsActions from '../../actions/NewsActions';
 
+const NOW = Date.now();
+
 class NewsItems extends React.Component {
   render() {
     if (this.props.errorMessage) {
@@ -24,9 +26,21 @@ class NewsItems extends React.Component {
       );
     }
 
+    // Sort news items by date for presentation
+    let sortByDate = (a, b) => {
+      return Date.parse(a.postDate) - Date.parse(b.postDate);
+    }
+
+    // Filter out anything post-dated in the future
+    let filterByDate = (item) => {
+      return Date.parse(item.postDate) < NOW;
+    }
+
+    let news = this.props.news.sort(sortByDate).filter(filterByDate);
+
     return (
       <div>
-        {this.props.news.map((newsItem, i) => {
+        {news.map((newsItem, i) => {
           return (
             <NewsItem key={i} data={newsItem} />
           )

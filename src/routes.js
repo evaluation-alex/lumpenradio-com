@@ -4,9 +4,11 @@ import React from 'react';
 import Router from 'react-routing/src/Router';
 import http from './core/HttpClient';
 import App from './components/App';
+import AppCanvas from './components/AppCanvas';
 import ContentPage from './components/ContentPage';
 import ContactPage from './components/ContactPage';
 import LoginPage from './components/LoginPage';
+import NewsPage from './components/NewsPage';
 import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
@@ -17,9 +19,13 @@ const router = new Router(on => {
     return component && <App context={state.context}>{component}</App>;
   });
 
+  on('/', async () => <AppCanvas />);
+
   on('/contact', async () => <ContactPage />);
 
   on('/login', async () => <LoginPage />);
+
+  on('/news', async () => <NewsPage />);
 
   on('/register', async () => <RegisterPage />);
 

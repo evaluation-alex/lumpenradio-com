@@ -9,10 +9,11 @@ class NewsItem extends React.Component {
   render() {
     let newsItem = this.props.data;
     newsItem.title = newsItem.title.toLowerCase();
+
     return (
       <div className="NewsItem">
         <div className="NewsItem-container">
-          <a className="NewsItem-link" href={newsItem.linkHref}>{newsItem.title}</a>
+          <a className="NewsItem-link" href={`/news/${newsItem.slug}`}>{newsItem.title}</a>
         </div>
       </div>
     );

@@ -1,0 +1,31 @@
+@import '../variables.css';
+
+.NewsPage-container {
+  padding: 0.5em;
+}
+
+.NewsPage-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.NewsPage-recentNews {
+  flex: 1;
+}
+
+.NewsPage-newsStory {
+  flex: 2;
+}
+
+.NewsPage-socialMedia {
+  display: flex;
+  flex-direction: column;
+}
+
+.NewsPage-twitter {
+  flex: 1;
+}
+
+.NewsPage-instagram {
+  flex: 1;
+}

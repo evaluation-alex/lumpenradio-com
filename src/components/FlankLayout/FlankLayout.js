@@ -1,16 +1,19 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './FlankLayout.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 import LeftFlank from '../LeftFlank';
 import RightFlank from '../RightFlank';
-import AppCanvas from '../AppCanvas';
 import Navigation from '../Navigation';
 
 @withStyles(styles)
 class FlankLayout extends React.Component {
+
+  static propTypes = {
+    children: PropTypes.element.isRequired
+  };
 
   render() {
     return (
@@ -18,7 +21,7 @@ class FlankLayout extends React.Component {
         <div className="FlankLayout-container">
           <div className="FlankLayout-appCanvas">
             <main>
-              <AppCanvas />
+              {this.props.children}
             </main>
           </div>
           <div className="FlankLayout-leftFlank">
