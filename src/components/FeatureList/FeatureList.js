@@ -8,11 +8,12 @@ import FeatureItem from '../FeatureItem';
 class FeatureList extends React.Component {
 
   render() {
-    var items = this.props.data.map( (item) => {
+    let items = this.props.data.map((item, i) => {
       return (
-        <FeatureItem data={item} />
+        <FeatureItem key={i} data={item} />
       )
     });
+
     return (
       <div className="FeatureList">
         <div className="FeatureList-container">

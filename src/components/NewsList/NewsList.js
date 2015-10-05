@@ -26,7 +26,7 @@ class NewsItems extends React.Component {
 
     return (
       <div>
-        {this.props.news.data.map((newsItem, i) => {
+        {this.props.news.map((newsItem, i) => {
           return (
             <NewsItem key={i} data={newsItem} />
           )

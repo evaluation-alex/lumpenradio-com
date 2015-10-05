@@ -6,7 +6,7 @@ import NewsSource from '../sources/NewsSource';
 
 class NewsStore {
   constructor() {
-    this.news = { data: [] };
+    this.news = [];
     this.errorMessage = null;
 
     this.bindListeners({

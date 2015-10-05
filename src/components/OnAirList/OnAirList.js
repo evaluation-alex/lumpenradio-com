@@ -8,9 +8,9 @@ import OnAirItem from '../OnAirItem';
 class OnAirList extends React.Component {
 
   render() {
-    var items = this.props.data.map( (item) => {
+    let items = this.props.data.map((item, i) => {
       return (
-        <OnAirItem data={item} />
+        <OnAirItem key={i} data={item} />
       )
     });
     return (

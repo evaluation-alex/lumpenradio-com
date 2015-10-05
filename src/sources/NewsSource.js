@@ -1,5 +1,4 @@
 import NewsActions from '../actions/NewsActions';
-
 import axios from 'axios';
 
 // let mockData = [
@@ -12,8 +11,9 @@ import axios from 'axios';
 let NewsSource = {
   fetchNews() {
     return {
-      remote() {
-        return axios.get('https://lumpenradio.firebaseio.com/news.json');
+      async remote() {
+        const res = await axios.get('https://lumpenradio.firebaseio.com/news.json');
+        return res.data;
       },
 
       local() {

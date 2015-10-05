@@ -8,11 +8,12 @@ import EventItem from '../EventItem';
 class EventList extends React.Component {
 
   render() {
-    var eventItems = this.props.data.map( (eventItems) => {
+    let eventItems = this.props.data.map((eventItems, i) => {
       return (
-        <EventItem data={eventItems} />
+        <EventItem key={i} data={eventItems} />
       )
     });
+
     return (
       <div className="EventList">
         <div className="EventList-container">
