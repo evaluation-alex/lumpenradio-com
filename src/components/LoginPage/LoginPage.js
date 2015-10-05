@@ -1,18 +1,18 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import styles from './LoginPage.css';
 import withStyles from '../../decorators/withStyles';
 
 @withStyles(styles)
-class LoginPage {
+class LoginPage extends Component {
 
   static contextTypes = {
-    onSetTitle: PropTypes.func.isRequired
+    onSetTitle: PropTypes.func.isRequired,
   };
 
   render() {
-    let title = 'Log In';
+    const title = 'Log In';
     this.context.onSetTitle(title);
     return (
       <div className="LoginPage">
