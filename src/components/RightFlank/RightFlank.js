@@ -6,7 +6,7 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
 @withStyles(styles)
-class RightFlank {
+class RightFlank extends React.Component {
 
   render() {
     return (

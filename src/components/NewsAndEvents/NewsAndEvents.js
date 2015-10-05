@@ -22,7 +22,7 @@ let eventData = [
 ]
 
 @withStyles(styles)
-class NewsAndEvents {
+class NewsAndEvents extends React.Component {
 
   render() {
 

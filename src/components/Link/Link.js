@@ -1,6 +1,6 @@
 /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import Location from '../../core/Location';
 
 function isLeftClickEvent(event) {
@@ -11,18 +11,18 @@ function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 
-class Link {
+class Link extends Component {
 
   static propTypes = {
     to: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired,
     state: PropTypes.object,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
   };
 
   static handleClick = event => {
-    var allowTransition = true;
-    var clickResult;
+    let allowTransition = true;
+    let clickResult;
 
     if (this.props && this.props.onClick) {
       clickResult = this.props.onClick(event);

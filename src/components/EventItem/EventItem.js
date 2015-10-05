@@ -4,7 +4,7 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
 @withStyles(styles)
-class EventItem {
+class EventItem extends React.Component {
 
   render() {
     var eventItem = this.props.data;

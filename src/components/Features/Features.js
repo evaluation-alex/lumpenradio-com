@@ -12,7 +12,7 @@ let data = [
 ]
 
 @withStyles(styles)
-class Features {
+class Features extends React.Component {
 
   render() {
     return (

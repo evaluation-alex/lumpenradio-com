@@ -22,7 +22,7 @@ function withViewport(ComposedComponent) {
       super();
 
       this.state = {
-        viewport: canUseDOM ? {width: window.innerWidth, height: window.innerHeight} : viewport
+        viewport: canUseDOM ? {width: window.innerWidth, height: window.innerHeight} : viewport,
       };
     }
 
@@ -32,6 +32,7 @@ function withViewport(ComposedComponent) {
         window.addEventListener('resize', handleWindowResize);
         window.addEventListener('orientationchange', handleWindowResize);
       }
+
       EE.on(RESIZE_EVENT, this.handleResize, this);
     }
 
@@ -49,7 +50,7 @@ function withViewport(ComposedComponent) {
     }
 
     handleResize(value) {
-      this.setState({viewport: value});
+      this.setState({viewport: value}); // eslint-disable-line react/no-set-state
     }
 
   };

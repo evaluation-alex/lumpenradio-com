@@ -5,7 +5,7 @@ import Link from '../Link';
 import EventItem from '../EventItem';
 
 @withStyles(styles)
-class EventList {
+class EventList extends React.Component {
 
   render() {
     var eventItems = this.props.data.map( (eventItems) => {

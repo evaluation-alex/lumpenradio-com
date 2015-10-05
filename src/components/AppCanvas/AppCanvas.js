@@ -9,7 +9,7 @@ import Features from '../Features';
 import OnAir from '../OnAir';
 
 @withStyles(styles)
-class AppCanvas {
+class AppCanvas extends React.Component {
 
   render() {
     return (

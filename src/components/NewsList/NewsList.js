@@ -37,7 +37,7 @@ class NewsItems extends React.Component {
 }
 
 @withStyles(styles)
-class NewsList {
+class NewsList extends React.Component {
 
   componentDidMount() {
     NewsStore.fetchNews()

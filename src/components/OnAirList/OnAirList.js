@@ -5,7 +5,7 @@ import Link from '../Link';
 import OnAirItem from '../OnAirItem';
 
 @withStyles(styles)
-class OnAirList {
+class OnAirList extends React.Component {
 
   render() {
     var items = this.props.data.map( (item) => {
