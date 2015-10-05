@@ -4,7 +4,7 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
 @withStyles(styles)
-class OnAirItem {
+class OnAirItem extends React.Component {
 
   render() {
     var { data } = this.props;

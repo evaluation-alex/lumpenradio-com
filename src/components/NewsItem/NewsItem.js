@@ -4,7 +4,7 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
 @withStyles(styles)
-class NewsItem {
+class NewsItem extends React.Component {
 
   render() {
     var newsItem = this.props.data;

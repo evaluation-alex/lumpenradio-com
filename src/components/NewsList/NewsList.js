@@ -5,7 +5,7 @@ import Link from '../Link';
 import NewsItem from '../NewsItem';
 
 @withStyles(styles)
-class NewsList {
+class NewsList extends React.Component {
 
   render() {
     var newsItems = this.props.data.map( (newsItem) => {

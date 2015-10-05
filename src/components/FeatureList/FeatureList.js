@@ -5,7 +5,7 @@ import Link from '../Link';
 import FeatureItem from '../FeatureItem';
 
 @withStyles(styles)
-class FeatureList {
+class FeatureList extends React.Component {
 
   render() {
     var items = this.props.data.map( (item) => {

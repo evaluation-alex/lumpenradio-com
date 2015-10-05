@@ -10,7 +10,7 @@ import AppCanvas from '../AppCanvas';
 import Navigation from '../Navigation';
 
 @withStyles(styles)
-class FlankLayout {
+class FlankLayout extends React.Component {
 
   render() {
     return (

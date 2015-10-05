@@ -13,7 +13,7 @@ let data = [
 ]
 
 @withStyles(styles)
-class OnAir {
+class OnAir extends React.Component {
 
   render() {
     return (
