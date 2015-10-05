@@ -1,15 +1,23 @@
 import alt from '../utils/alt';
 import NewsActions from '../actions/NewsActions';
+import NewsSource from '../sources/NewsSource';
 
 class NewsStore {
   constructor() {
     this.news = [];
     this.errorMessage = null;
+
     this.bindListeners({
       handleUpdateNews: NewsActions.UPDATE_NEWS,
       handleFetchNews: NewsActions.FETCH_NEWS,
       handleNewsFailed: NewsActions.NEWS_FAILED
     });
+
+    this.exportPublicMethods({
+      getNews: this.getNewsItem
+    });
+
+    this.exportAsync(NewsSource);
   }
 
   handleUpdateNews(news) {
@@ -26,6 +34,17 @@ class NewsStore {
 
   handleNewsFailed(errorMessage) {
     this.errorMessage = errorMessage;
+  }
+
+  getNewsItem(id) {
+    let { news } = this.getState();
+    for (let i = 0; i < news.length; i++) {
+      if (news[i].id  === id) {
+        return news[i];
+      }
+    }
+
+    return null;
   }
 }
 

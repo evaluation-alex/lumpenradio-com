@@ -4,32 +4,19 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 import NewsItem from '../NewsItem';
 
+import AltContainer from 'alt/AltContainer';
 import NewsStore from '../../stores/NewsStore';
 import NewsActions from '../../actions/NewsActions';
 
-@withStyles(styles)
-class NewsList {
-  constructor(props) {
-    this.state = NewsStore.getState();
-  }
-
-  componentDidMount() {
-    NewsStore.listen(this.onChange);
-    NewsActions.fetchNews();
-  }
-
-  componentWillUnmount() {
-    NewsStore.unlisten(this.onChange);
-  }
-
+class NewsItems extends React.Component {
   render() {
-    if (this.state.errorMessage) {
+    if (this.props.errorMessage) {
       return (
-        <div>Something is wrong</div>
+        <div>{this.props.errorMessage}</div>
       );
     }
 
-    if (!this.state.news.length) {
+    if (NewsStore.isLoading()) {
       return (
         <div>
           Loading...
@@ -37,11 +24,27 @@ class NewsList {
       );
     }
 
-    let newsItems = this.state.news.map( (newsItem) => {
-      return (
-        <NewsItem data={newsItem} />
-      );
-    });
+    return (
+      <div>
+        {this.props.news.map((newsItem, i) => {
+          return (
+            <NewsItem key={i} data={newsItem} />
+          )
+        })}
+      </div>
+    );
+  }
+}
+
+@withStyles(styles)
+class NewsList {
+
+  componentDidMount() {
+    NewsStore.fetchNews()
+  }
+
+  render() {
+
     return (
       <div className="NewsList">
         <div className="NewsList-container">
@@ -49,7 +52,9 @@ class NewsList {
             <h1>News</h1>
           </div>
           <div className="NewsList-newsItems">
-            {newsItems}
+            <AltContainer store={NewsStore}>
+              <NewsItems />
+            </AltContainer>
           </div>
           <a className="NewsList-moreLink" href="/news">More News →</a>
         </div>
