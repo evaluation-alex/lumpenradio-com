@@ -1,38 +1,40 @@
 import alt from '../utils/alt';
+import makeHot from 'alt/utils/makeHot';
+
 import NewsActions from '../actions/NewsActions';
 import NewsSource from '../sources/NewsSource';
 
 class NewsStore {
   constructor() {
-    this.news = [];
+    this.news = { data: [] };
     this.errorMessage = null;
 
     this.bindListeners({
-      handleUpdateNews: NewsActions.UPDATE_NEWS,
-      handleFetchNews: NewsActions.FETCH_NEWS,
-      handleNewsFailed: NewsActions.NEWS_FAILED
+      onUpdateNews: NewsActions.UPDATE_NEWS,
+      onFetchNews: NewsActions.FETCH_NEWS,
+      onNewsFailed: NewsActions.NEWS_FAILED
     });
 
     this.exportPublicMethods({
-      getNews: this.getNewsItem
+      getNewsItem: this.getNewsItem
     });
 
     this.exportAsync(NewsSource);
   }
 
-  handleUpdateNews(news) {
+  onUpdateNews(news) {
     this.news = news;
     this.error = null;
     // optionally return false to suppress the store change event
   }
 
-  handleFetchNews() {
+  onFetchNews() {
     // reset the array while we're fetching new locations so React can
     // be smart and render a spinner for us since the data is empty.
     this.news = [];
   }
 
-  handleNewsFailed(errorMessage) {
+  onNewsFailed(errorMessage) {
     this.errorMessage = errorMessage;
   }
 
@@ -48,4 +50,4 @@ class NewsStore {
   }
 }
 
-export default alt.createStore(NewsStore, 'NewsStore');
+export default makeHot(alt, NewsStore);

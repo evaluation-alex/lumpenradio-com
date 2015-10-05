@@ -7,7 +7,8 @@ import Link from '../Link';
 class NewsItem {
 
   render() {
-    var newsItem = this.props.data;
+    let newsItem = this.props.data;
+    newsItem.title = newsItem.title.toLowerCase();
     return (
       <div className="NewsItem">
         <div className="NewsItem-container">
