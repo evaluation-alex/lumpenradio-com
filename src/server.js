@@ -38,8 +38,10 @@ server.get('*', async (req, res, next) => {
       onPageNotFound: () => statusCode = 404,
     };
 
-    await Router.dispatch({ path: req.path, context }, (state, component, payload) => {
-      alt.bootstrap(JSON.stringify({ NewsStore: payload }));
+    await NewsStore.fetchNews();
+
+    await Router.dispatch({ path: req.path, context }, (state, component, _) => {
+      alt.bootstrap(JSON.stringify({ NewsStore: _ }));
       iso.add(
         ReactDOM.renderToString(component),
         alt.flush()
@@ -61,7 +63,6 @@ server.get('*', async (req, res, next) => {
 
 server.listen(server.get('port'), () => {
   /* eslint-disable no-console */
-  NewsStore.fetchNews().then((stuff) => console.log(stuff))
   console.log('The server is running at http://localhost:' + server.get('port'));
   if (process.send) {
     process.send('online');
