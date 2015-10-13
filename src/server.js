@@ -3,12 +3,15 @@
 import 'babel-core/polyfill';
 import path from 'path';
 import express from 'express';
+import alt from './utils/alt';
+import Iso from 'iso';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import Router from './routes';
 import Html from './components/Html';
 
 const server = global.server = express();
+const iso = new Iso();
 
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(path.join(__dirname, 'public')));
@@ -33,8 +36,13 @@ server.get('*', async (req, res, next) => {
       onPageNotFound: () => statusCode = 404,
     };
 
-    await Router.dispatch({ path: req.path, context }, (state, component) => {
-      data.body = ReactDOM.renderToString(component);
+    await Router.dispatch({ path: req.path, context }, (state, component, payload) => {
+      alt.bootstrap(JSON.stringify({ NewsStore: payload }));
+      iso.add(
+        ReactDOM.renderToString(component),
+        alt.flush()
+      );
+      data.body = iso.render();
       data.css = css.join('');
     });
 

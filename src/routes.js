@@ -9,6 +9,7 @@ import ContentPage from './components/ContentPage';
 import ContactPage from './components/ContactPage';
 import LoginPage from './components/LoginPage';
 import NewsPage from './components/NewsPage';
+import NewsSource from './sources/NewsSource';
 import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
@@ -25,7 +26,13 @@ const router = new Router(on => {
 
   on('/login', async () => <LoginPage />);
 
-  on('/news', async () => <NewsPage />);
+  on('/news', async () => {
+    return ( <NewsPage /> )
+  }, async () => {
+    // Get and bootstrap data for page
+    // TODO: Create utility to grab data needs automatically using @connectToStores
+    return await NewsSource.fetchNews();
+  });
 
   on('/register', async () => <RegisterPage />);
 

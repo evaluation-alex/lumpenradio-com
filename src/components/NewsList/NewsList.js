@@ -11,6 +11,16 @@ import NewsActions from '../../actions/NewsActions';
 const NOW = Date.now();
 
 class NewsItems extends React.Component {
+
+  static propTypes = {
+    errorMessage: React.PropTypes.string,
+    news: React.PropTypes.array
+  }
+
+  static defaultProps = {
+    news: []
+  }
+
   render() {
     if (this.props.errorMessage) {
       return (
@@ -26,14 +36,16 @@ class NewsItems extends React.Component {
       );
     }
 
+    const { parse } = Date;
+
     // Sort news items by date for presentation
     let sortByDate = (a, b) => {
-      return Date.parse(a.postDate) - Date.parse(b.postDate);
+      return parse(a.postDate) - parse(b.postDate);
     }
 
     // Filter out anything post-dated in the future
     let filterByDate = (item) => {
-      return Date.parse(item.postDate) < NOW;
+      return parse(item.postDate) < NOW;
     }
 
     let news = this.props.news.sort(sortByDate).filter(filterByDate);
@@ -53,9 +65,9 @@ class NewsItems extends React.Component {
 @withStyles(styles)
 class NewsList extends React.Component {
 
-  componentDidMount() {
-    NewsStore.fetchNews()
-  }
+  // componentDidMount() {
+  //   NewsStore.fetchNews()
+  // }
 
   render() {
 
