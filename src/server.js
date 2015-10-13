@@ -13,6 +13,8 @@ import Html from './components/Html';
 const server = global.server = express();
 const iso = new Iso();
 
+import NewsStore from './stores/NewsStore';
+
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(path.join(__dirname, 'public')));
 
@@ -59,6 +61,7 @@ server.get('*', async (req, res, next) => {
 
 server.listen(server.get('port'), () => {
   /* eslint-disable no-console */
+  NewsStore.fetchNews().then((stuff) => console.log(stuff))
   console.log('The server is running at http://localhost:' + server.get('port'));
   if (process.send) {
     process.send('online');
