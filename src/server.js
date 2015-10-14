@@ -39,9 +39,9 @@ server.get('*', async (req, res, next) => {
     };
 
     await NewsStore.fetchNews();
+    alt.bootstrap(JSON.stringify({ /* hack or awesome? */ }));
 
-    await Router.dispatch({ path: req.path, context }, (state, component, _) => {
-      alt.bootstrap(JSON.stringify({ NewsStore: _ }));
+    await Router.dispatch({ path: req.path, context }, (state, component) => {
       iso.add(
         ReactDOM.renderToString(component),
         alt.flush()

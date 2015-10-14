@@ -3,6 +3,8 @@
 import 'babel-core/polyfill';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
+import Iso from 'iso';
+import alt from './utils/alt';
 import Router from './routes';
 import Location from './core/Location';
 import { addEventListener, removeEventListener } from './utils/DOMUtils';
@@ -53,6 +55,11 @@ function run() {
 
   // Make taps on links and buttons work fast on mobiles
   FastClick.attach(document.body);
+
+  // Setup the client-side stores with the same data the server had
+  Iso.bootstrap((state, meta, node) => {
+    alt.bootstrap(state);
+  });
 
   // Re-render the app when window.location changes
   const unlisten = Location.listen(location => {

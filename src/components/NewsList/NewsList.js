@@ -65,12 +65,7 @@ class NewsItems extends React.Component {
 @withStyles(styles)
 class NewsList extends React.Component {
 
-  // componentDidMount() {
-  //   NewsStore.fetchNews()
-  // }
-
   render() {
-
     return (
       <div className="NewsList">
         <div className="NewsList-container">
