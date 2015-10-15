@@ -10,6 +10,10 @@ class NewsPage extends React.Component {
     onSetTitle: PropTypes.func.isRequired
   };
 
+  static propTypes = {
+    slug: React.PropTypes.string
+  };
+
   render() {
     let title = 'News';
     this.context.onSetTitle(title);
@@ -20,7 +24,10 @@ class NewsPage extends React.Component {
             <h1>{title}</h1>
           </div>
           <div className="NewsPage-body">
-            <NewsList className="NewsPage-recentNews" />
+            <NewsList
+              {...this.props}
+              title="Recent News"
+              className="NewsPage-recentNews" />
             <div className="NewsPage-newsStory">Story</div>
             <div className="NewsPage-socialMedia">
               <div className="NewsPage-twitter">Twitter</div>

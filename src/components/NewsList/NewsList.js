@@ -13,6 +13,7 @@ const NOW = Date.now();
 class NewsItems extends React.Component {
 
   static propTypes = {
+    slug: React.PropTypes.string,
     errorMessage: React.PropTypes.string,
     news: React.PropTypes.array
   }
@@ -22,6 +23,8 @@ class NewsItems extends React.Component {
   }
 
   render() {
+    const { slug } = this.props;
+
     if (this.props.errorMessage) {
       return (
         <div>{this.props.errorMessage}</div>
@@ -36,6 +39,7 @@ class NewsItems extends React.Component {
       );
     }
 
+
     const { parse } = Date;
 
     // Sort news items by date for presentation
@@ -49,6 +53,10 @@ class NewsItems extends React.Component {
     }
 
     let news = this.props.news.sort(sortByDate).filter(filterByDate);
+
+    if (slug) {
+      news = [NewsStore.getNewsItem(slug)];
+    }
 
     return (
       <div>
@@ -65,16 +73,27 @@ class NewsItems extends React.Component {
 @withStyles(styles)
 class NewsList extends React.Component {
 
+  static propTypes = {
+    title: React.PropTypes.string,
+    slug: React.PropTypes.string
+  }
+
+  static defaultProps = {
+    title: 'News'
+  }
+
   render() {
+    const { slug } = this.props;
+
     return (
       <div className="NewsList">
         <div className="NewsList-container">
           <div className="NewsList-header">
-            <h1>News</h1>
+            <h1>{this.props.title}</h1>
           </div>
           <div className="NewsList-newsItems">
             <AltContainer store={NewsStore}>
-              <NewsItems />
+              <NewsItems slug={slug} />
             </AltContainer>
           </div>
           <a className="NewsList-moreLink" href="/news">More News →</a>

@@ -13,6 +13,8 @@ import RegisterPage from './components/RegisterPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 
+import NewsStore from './stores/NewsStore';
+
 const router = new Router(on => {
   on('*', async (state, next) => {
     const component = await next();
@@ -26,6 +28,9 @@ const router = new Router(on => {
   on('/login', async () => <LoginPage />);
 
   on('/news', async () => <NewsPage />);
+  on('/news/:id', async (req) => {
+    return <NewsPage slug={req.params.id} />;
+  });
 
   on('/register', async () => <RegisterPage />);
 

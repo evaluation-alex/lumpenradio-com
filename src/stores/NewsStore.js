@@ -41,7 +41,7 @@ class NewsStore {
   getNewsItem(id) {
     let { news } = this.getState();
     for (let i = 0; i < news.length; i++) {
-      if (news[i].id  === id) {
+      if (news[i].slug === id) {
         return news[i];
       }
     }
