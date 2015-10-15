@@ -23,11 +23,11 @@ class NewsItems extends React.Component {
   }
 
   render() {
-    const { slug } = this.props;
+    const { slug, news, errorMessage } = this.props;
 
-    if (this.props.errorMessage) {
+    if (errorMessage) {
       return (
-        <div>{this.props.errorMessage}</div>
+        <div>{errorMessage}</div>
       );
     }
 
@@ -52,15 +52,13 @@ class NewsItems extends React.Component {
       return parse(item.postDate) < NOW;
     }
 
-    let news = this.props.news.sort(sortByDate).filter(filterByDate);
-
-    if (slug) {
-      news = [NewsStore.getNewsItem(slug)];
-    }
+    let newsItems = (slug)
+      ? [NewsStore.getNewsItem(slug)]
+      : news.sort(sortByDate).filter(filterByDate);
 
     return (
       <div>
-        {news.map((newsItem, i) => {
+        {newsItems.map((newsItem, i) => {
           return (
             <NewsItem key={i} data={newsItem} />
           )
