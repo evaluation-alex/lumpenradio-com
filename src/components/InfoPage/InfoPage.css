@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.InfoPage-container {
+  padding: 0.5em;
+}
+
+.InfoPage-body {
+  display: flex;
+  flex-direction: row;
+}

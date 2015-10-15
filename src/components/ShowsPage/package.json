@@ -1,0 +1,6 @@
+{
+  "name": "ShowsPage",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ShowsPage.js"
+}

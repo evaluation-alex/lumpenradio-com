@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.EventsPage-container {
+  padding: 0.5em;
+}
+
+.EventsPage-body {
+  display: flex;
+  flex-direction: row;
+}

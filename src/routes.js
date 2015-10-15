@@ -8,8 +8,13 @@ import AppCanvas from './components/AppCanvas';
 import ContentPage from './components/ContentPage';
 import ContactPage from './components/ContactPage';
 import LoginPage from './components/LoginPage';
-import NewsPage from './components/NewsPage';
 import RegisterPage from './components/RegisterPage';
+import SchedulePage from './components/SchedulePage';
+import ShowsPage from './components/ShowsPage';
+import NewsPage from './components/NewsPage';
+import EventsPage from './components/EventsPage';
+import InfoPage from './components/InfoPage';
+import SponsorPage from './components/SponsorPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 
@@ -27,12 +32,22 @@ const router = new Router(on => {
 
   on('/login', async () => <LoginPage />);
 
+  on('/register', async () => <RegisterPage />);
+
   on('/news', async () => <NewsPage />);
-  on('/news/:id', async (req) => {
-    return <NewsPage slug={req.params.id} />;
+  on('/news/:slug', async (req) => {
+    return <NewsPage slug={req.params.slug} />;
   });
 
-  on('/register', async () => <RegisterPage />);
+  on('/schedule', async () => <SchedulePage />);
+
+  on('/shows', async () => <ShowsPage />);
+
+  on('/events', async () => <EventsPage />);
+
+  on('/info', async () => <InfoPage />);
+
+  on('/sponsor', async () => <SponsorPage />);
 
   on('*', async (state) => {
     const content = await http.get(`/api/content?path=${state.path}`);

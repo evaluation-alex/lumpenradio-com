@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.SponsorPage-container {
+  padding: 0.5em;
+}
+
+.SponsorPage-body {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.SchedulePage-container {
+  padding: 0.5em;
+}
+
+.SchedulePage-body {
+  display: flex;
+  flex-direction: row;
+}

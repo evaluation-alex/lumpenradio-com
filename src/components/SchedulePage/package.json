@@ -1,0 +1,6 @@
+{
+  "name": "SchedulePage",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./SchedulePage.js"
+}

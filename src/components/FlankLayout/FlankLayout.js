@@ -1,6 +1,4 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import styles from './FlankLayout.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
@@ -8,12 +6,9 @@ import LeftFlank from '../LeftFlank';
 import RightFlank from '../RightFlank';
 import Navigation from '../Navigation';
 
+@withContext
 @withStyles(styles)
-class FlankLayout extends React.Component {
-
-  static propTypes = {
-    children: PropTypes.element.isRequired
-  };
+class FlankLayout extends Component {
 
   render() {
     return (
