@@ -1,3 +1,15 @@
+## Lumpen Radio Web 2.0
+
+Lumpen Radio Web 2.0 is an evolution of the mind.
+
+![wlpn-com-proto-navigation](https://cloud.githubusercontent.com/assets/440298/10523933/98b4cafa-7342-11e5-85da-7e4966aea6a8.gif)
+
+### Features
+
+- Remote data fetching from Firebase
+- Isomorphic rendering of remote data
+- Markdown processing for news stories
+
 ## React Starter Kit — "isomorphic" web app boilerplate
 
 [![Support us on Bountysource](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/banner.png)](https://salt.bountysource.com/teams/react-starter-kit)<br>
