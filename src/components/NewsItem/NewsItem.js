@@ -7,7 +7,6 @@ import Link from '../Link';
 class NewsItem extends React.Component {
 
   static propTypes = {
-    key: React.PropTypes.number.isRequired,
     data: React.PropTypes.shape({
       postDate: React.PropTypes.string,
       slug: React.PropTypes.string,
@@ -24,7 +23,7 @@ class NewsItem extends React.Component {
       <div className="NewsItem">
         <div className="NewsItem-container">
           <a href={`/news/${data.slug}`}
-            className={ `NewsItem-link ${(isSelected) ? "NewsItem-link--selected" : null}` }
+            className={ `NewsItem-link ${(isSelected) ? 'NewsItem-link--selected' : ''}` }
             onClick={Link.handleClick}>
             {data.title}
           </a>

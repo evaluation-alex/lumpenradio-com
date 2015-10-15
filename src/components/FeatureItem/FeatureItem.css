@@ -22,7 +22,8 @@
 }
 
 .FeatureItem-heroImage {
-  margin: 2rem 2rem 0;
+  /*margin: 2rem 2rem 0;*/
+  width: 100%;
 }
 
 .FeatureItem-headline {

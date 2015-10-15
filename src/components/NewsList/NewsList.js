@@ -6,7 +6,6 @@ import NewsItem from '../NewsItem';
 
 import AltContainer from 'alt/AltContainer';
 import NewsStore from '../../stores/NewsStore';
-import NewsActions from '../../actions/NewsActions';
 
 const NOW = Date.now();
 
@@ -38,7 +37,6 @@ class NewsItems extends React.Component {
         </div>
       );
     }
-
 
     const { parse } = Date;
 
