@@ -96,7 +96,7 @@ class NewsList extends React.Component {
               <NewsItems slug={slug} />
             </AltContainer>
           </div>
-          <a className="NewsList-moreLink" href="/news">More News →</a>
+          <a className="NewsList-moreLink" href="/news" onClick={Link.handleClick}>More News →</a>
         </div>
       </div>
     );

@@ -13,7 +13,7 @@ class NewsItem extends React.Component {
     return (
       <div className="NewsItem">
         <div className="NewsItem-container">
-          <a className="NewsItem-link" href={`/news/${newsItem.slug}`}>{newsItem.title}</a>
+          <a className="NewsItem-link" href={`/news/${newsItem.slug}`} onClick={Link.handleClick}>{newsItem.title}</a>
         </div>
       </div>
     );
