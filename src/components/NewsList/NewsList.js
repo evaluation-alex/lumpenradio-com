@@ -52,11 +52,9 @@ class NewsItems extends React.Component {
       return parse(item.postDate) < NOW;
     }
 
-    let newsItems = news.sort(sortByDate).filter(filterByDate);
-
     return (
       <div>
-        {newsItems.map((newsItem, i) => {
+        {news.sort(sortByDate).filter(filterByDate).map((newsItem, i) => {
           if (newsItem.slug === slug) {
             return <NewsItem key={i} data={newsItem} isSelected={true} />;
           } else {
