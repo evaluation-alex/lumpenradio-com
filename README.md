@@ -1,5 +1,9 @@
 ## Lumpen Radio Web 2.0
 
+[![Dependency Status](https://david-dm.org/jhabdas/lumpenradio-com.svg)](https://david-dm.org/jhabdas/lumpenradio-com)
+[![devDependency Status](https://david-dm.org/jhabdas/lumpenradio-com/dev-status.svg)](https://david-dm.org/jhabdas/lumpenradio-com#info=devDependencies)
+[![Tips](http://img.shields.io/gratipay/jhabdas.svg)](https://gratipay.com/jhabdas)
+
 Lumpen Radio Web 2.0 is an evolution of the mind.
 
 ![wlpn-com-proto-navigation](https://cloud.githubusercontent.com/assets/440298/10523933/98b4cafa-7342-11e5-85da-7e4966aea6a8.gif)
