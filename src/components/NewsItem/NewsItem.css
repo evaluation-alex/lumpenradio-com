@@ -22,5 +22,11 @@
 .NewsItem-link:visited {
   display: block;
   padding: 14px 0;
+  background: transparent;
+  transition: background 0.25s ease-out;
   color: #000;
+}
+
+.NewsItem-link--selected {
+  background: var(--brand-primary);
 }

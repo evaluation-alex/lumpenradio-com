@@ -6,14 +6,28 @@ import Link from '../Link';
 @withStyles(styles)
 class NewsItem extends React.Component {
 
+  static propTypes = {
+    key: React.PropTypes.number.isRequired,
+    data: React.PropTypes.shape({
+      postDate: React.PropTypes.string,
+      slug: React.PropTypes.string,
+      title: React.PropTypes.string
+    }),
+    isSelected: React.PropTypes.bool
+  }
+
   render() {
-    let newsItem = this.props.data;
-    newsItem.title = newsItem.title.toLowerCase();
+    const { data, isSelected } = this.props;
+    data.title = data.title.toLowerCase();
 
     return (
       <div className="NewsItem">
         <div className="NewsItem-container">
-          <a className="NewsItem-link" href={`/news/${newsItem.slug}`} onClick={Link.handleClick}>{newsItem.title}</a>
+          <a href={`/news/${data.slug}`}
+            className={ `NewsItem-link ${(isSelected) ? "NewsItem-link--selected" : null}` }
+            onClick={Link.handleClick}>
+            {data.title}
+          </a>
         </div>
       </div>
     );
