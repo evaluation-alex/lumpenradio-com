@@ -1,32 +1,32 @@
 @import '../variables.css';
 
-.AppCanvas {
+.HomePage {
 
 }
 
-.AppCanvas-container {
+.HomePage-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.AppCanvas-bodyContainer {
+.HomePage-bodyContainer {
   display: flex;
   flex-direction: row;
 }
 
-.AppCanvas-bodyNewsAndFeatures {
+.HomePage-bodyNewsAndFeatures {
   flex: 1;
 }
 
-.AppCanvas-bodyFeatures {
+.HomePage-bodyFeatures {
   flex: 3;
 }
 
-.AppCanvas-bodyOnAir {
+.HomePage-bodyOnAir {
   flex: 1;
 }
 
-.AppCanvas-bodyNoMansLand {
+.HomePage-bodyNoMansLand {
   flex: 0;
 }
