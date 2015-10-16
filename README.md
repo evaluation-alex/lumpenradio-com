@@ -11,26 +11,9 @@ The new Lumpen Radio is an evolution of the mind.
 
 ### Features
 
-- Remote data fetching from Firebase
-- Isomorphic rendering of remote data
-- Markdown processing for news stories
-
-## React Starter Kit — "isomorphic" web app boilerplate
-
-[![Support us on Bountysource](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/banner.png)](https://salt.bountysource.com/teams/react-starter-kit)<br>
-
-> [React Starter Kit](http://www.reactstarterkit.com) is an opinionated
-> boilerplate for web development built on top of Facebook's
-> [React](https://facebook.github.io/react/) library,
-> [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
-> and [Flux](http://facebook.github.io/flux/) architecture. Containing
-> modern web development tools such as [Webpack](http://webpack.github.io/),
-> [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
-> Helping you to stay productive following the best practices. A solid starting
-> point for both professionals and newcomers to the industry.
-
-Demo: http://demo.reactstarterkit.com &nbsp;|&nbsp;
-Join [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) chatroom on Gitter to stay up to date.
+- Data fetching from [Firebase](https://www.firebase.com/).
+- [Alt](http://alt.js.org/) for view state management.
+- Markdown processing with [Showdown](https://github.com/showdownjs/showdown).
 
 ### Documentation
 
@@ -47,7 +30,6 @@ Join [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) chatroom
 ### Directory Layout
 
 ```
-.
 ├── /build/                     # The folder for compiled output
 ├── /docs/                      # Documentation files for the project
 ├── /node_modules/              # 3rd-party libraries and utilities
@@ -85,9 +67,8 @@ Join [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) chatroom
 Just clone the repo and start hacking:
 
 ```shell
-$ git clone -o react-starter-kit -b master --single-branch \
-      https://github.com/kriasoft/react-starter-kit.git MyApp
-$ cd MyApp
+$ git clone https://github.com/jhabdas/lumpenradio-com.git
+$ cd lumpenradio-com
 $ npm install                   # Install Node.js components listed in ./package.json
 $ npm start                     # Compile and launch
 ```
@@ -143,37 +124,3 @@ $ npm test
 Test any javascript module by creating a `__tests__/` directory where
 the file is. Name the test by appending `-test.js` to the js file.
 [Jest](https://facebook.github.io/jest/) will do the rest.
-
-### Related Projects
-
-  * [React Static Boilerplate](https://github.com/koistya/react-static-boilerplate) — Generates a static website from React components
-  * [Babel Starter Kit](https://github.com/kriasoft/babel-starter-kit) — A boilerplate for authoring JavaScript/React.js libraries
-  * [React Decorators](https://github.com/kriasoft/react-decorators) — A collection of higher-order React components
-
-### Learn More
-
-  * [Getting Started with React.js](http://facebook.github.io/react/)
-  * [Getting Started with GraphQL and Relay](https://quip.com/oLxzA1gTsJsE)
-  * [React.js Questions on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
-  * [React.js Discussion Board](https://discuss.reactjs.org/)
-  * [Flux Architecture for Building User Interfaces](http://facebook.github.io/flux/)
-  * [Jest - Painless Unit Testing](http://facebook.github.io/jest/)
-  * [Flow - A static type checker for JavaScript](http://flowtype.org/)
-  * [The Future of React](https://github.com/reactjs/react-future)
-  * [Learn ES6](https://babeljs.io/docs/learn-es6/), [ES6 Features](https://github.com/lukehoban/es6features#readme)
-
-### Support
-
-  * [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) on Gitter — Feedback, feature requests, Q&A
-  * [@koistya](https://www.codementor.io/koistya) on Codementor — Mentorship, code reviews
-  * support@kriasoft.com — Customization requests, help with GraphQL/Relay back-ends etc.
-
-### License
-
-Copyright © 2014-2015 Kriasoft, LLC. This source code is licensed under the MIT
-license found in the [LICENSE.txt](https://github.com/kriasoft/react-starter-kit/blob/master/LICENSE.txt)
-file. The documentation to the project is licensed under the
-[CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) license.
-
----
-Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/kriasoft/react-starter-kit/graphs/contributors)
