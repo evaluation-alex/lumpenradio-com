@@ -1,5 +1,6 @@
 ## Lumpen Radio Web 2.0
 
+[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/jhabdas/lumpen-radio-web-2-0)
 [![Dependency Status](https://david-dm.org/jhabdas/lumpenradio-com.svg)](https://david-dm.org/jhabdas/lumpenradio-com)
 [![devDependency Status](https://david-dm.org/jhabdas/lumpenradio-com/dev-status.svg)](https://david-dm.org/jhabdas/lumpenradio-com#info=devDependencies)
 [![Tips](http://img.shields.io/gratipay/jhabdas.svg)](https://gratipay.com/jhabdas)
