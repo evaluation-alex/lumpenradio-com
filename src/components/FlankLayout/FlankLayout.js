@@ -6,7 +6,6 @@ import LeftFlank from '../LeftFlank';
 import RightFlank from '../RightFlank';
 import Navigation from '../Navigation';
 
-@withContext
 @withStyles(styles)
 class FlankLayout extends Component {
 

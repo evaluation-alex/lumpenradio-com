@@ -6,7 +6,9 @@ import Link from '../Link';
 import NewsStore from '../../stores/NewsStore';
 
 import showdown from 'showdown';
-const converter = new showdown.Converter();
+import xssFilter from 'showdown-xss-filter';
+
+const CONVERTER = new showdown.Converter({extensions: [xssFilter]});
 
 @withStyles(styles)
 class NewsStory extends React.Component {
@@ -39,7 +41,7 @@ class NewsStory extends React.Component {
       // story is written in markdown. But it could be any trusted
       // library. Watch out for XSS vulnerabilities here.
       let newsItem = NewsStore.getNewsItem(slug);
-      let markup = { __html: converter.makeHtml(newsItem.story) };
+      let markup = { __html: CONVERTER.makeHtml(newsItem.story) };
 
       return (
         <div className="NewsStory">
