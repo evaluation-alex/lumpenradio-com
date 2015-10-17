@@ -1,0 +1,16 @@
+@import '../variables.css';
+
+.ScheduleList {
+
+}
+
+.ScheduleList-container {
+  font-variant: small-caps;
+  text-align: center;
+}
+
+.ScheduleList-header {
+  color: var(--brand-primary);
+  font-size: var(--font-size-h1);
+}
+

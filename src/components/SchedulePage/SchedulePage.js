@@ -1,6 +1,11 @@
 import React, { PropTypes } from 'react';
 import styles from './SchedulePage.css';
 import withStyles from '../../decorators/withStyles';
+import ScheduleList from '../ScheduleList';
+
+import AltContainer from 'alt/AltContainer';
+import ScheduleStore from '../../stores/ScheduleStore';
+import ScheduleActions from '../../actions/ScheduleActions';
 
 @withStyles(styles)
 class SchedulePage extends React.Component {
@@ -19,7 +24,11 @@ class SchedulePage extends React.Component {
             <h1>{title}</h1>
           </div>
           <div className="SchedulePage-body">
-            Yay schedules!
+            <AltContainer
+              store={ScheduleStore}
+              actions={ScheduleActions}>
+              <ScheduleList />
+            </AltContainer>
           </div>
         </div>
       </div>
