@@ -48,7 +48,7 @@ class Navigation extends Component {
         {INTERNAL_LINKS.map((link, i) => {
           let { pathname } = location;
 
-          // make link body lowercase if it's a string
+          // make text lower-case for better display in small-caps
           (typeof link.body === 'string')
             ? link.body = link.body.toLowerCase()
             : null;
