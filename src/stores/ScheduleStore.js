@@ -6,7 +6,7 @@ import ScheduleSource from '../sources/ScheduleSource';
 
 class ScheduleStore {
   constructor() {
-    this.news = [];
+    this.schedule = [];
     this.errorMessage = null;
 
     this.bindListeners({

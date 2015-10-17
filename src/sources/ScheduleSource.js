@@ -15,14 +15,14 @@ let mockData = [ {
   "showId" : "bridgeports-got-beef",
 }, {
   "dateTime" : "2020-02-14T01:01:56-05:00",
-  "showId" : "news-from-the-future",
+  "showId" : "show-from-the-future",
 } ]
 
 let ScheduleSource = {
-  fetchNews() {
+  fetchSchedule() {
     return {
       async remote() {
-        // const res = await axios.get('https://lumpenradio.firebaseio.com/schedule.json');
+        const res = await axios.get('https://lumpenradio.firebaseio.com/schedule.json');
         return mockData || res.data;
       },
 
