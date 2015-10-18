@@ -35,14 +35,12 @@ class NewsStory extends React.Component {
       );
     }
 
-    if (slug) {
-
-      // Get news item from store and generate markup. Assumes the
-      // story is written in markdown. But it could be any trusted
-      // library. Watch out for XSS vulnerabilities here.
-      let newsItem = NewsStore.getNewsItem(slug);
+    // Get news item from store and generate markup. Assumes the
+    // story is written in markdown. But it could be any trusted
+    // library. Watch out for XSS vulnerabilities here.
+    let newsItem = NewsStore.getNewsItem(slug);
+    if (newsItem) {
       let markup = { __html: CONVERTER.makeHtml(newsItem.story) };
-
       return (
         <div className="NewsStory">
           <div className="NewsStory-container">
@@ -50,7 +48,7 @@ class NewsStory extends React.Component {
           </div>
         </div>
       );
-    } else return <div />;
+    } else return <p>Select a story to get started.</p>;
   }
 }
 
