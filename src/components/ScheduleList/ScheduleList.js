@@ -2,8 +2,9 @@ import React, { PropTypes } from 'react';
 import styles from './ScheduleList.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
-
 import ScheduleStore from '../../stores/ScheduleStore';
+
+import moment from 'moment';
 
 @withStyles(styles)
 class ScheduleList extends React.Component {
@@ -19,8 +20,17 @@ class ScheduleList extends React.Component {
     schedule: []
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      now: Date()
+    }
+  }
+
   render() {
     const { schedule, errorMessage } = this.props;
+    let { now } = this.state;
 
     if (errorMessage) {
       return (
@@ -36,14 +46,23 @@ class ScheduleList extends React.Component {
       );
     }
 
+    // Filter out anything not in the current month
+    let filterByDate = (item) => {
+      return moment(item.dateTime).isBetween(
+        moment(now).startOf('month'),
+        moment(now).endOf('month')
+      );
+    }
+
     return (
       <div className="ScheduleList">
         <div className="ScheduleList-container">
           <div className="ScheduleList-header">
             <h1>{this.props.title}</h1>
+            <h2>{moment(now).format('MMMM')}</h2>
           </div>
           <div className="ScheduleList-newsItems">
-            {schedule.map((scheduleItem, i) => {
+            {schedule.filter(filterByDate).map((scheduleItem, i) => {
               return <div>{scheduleItem.showId}</div>;
             })}
           </div>

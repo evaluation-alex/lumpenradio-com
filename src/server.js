@@ -39,9 +39,11 @@ server.get('*', async (req, res, next) => {
       onPageNotFound: () => statusCode = 404,
     };
 
+    // TODO: Convert fetch operations to route handlers and hand-off
+    //   bootstrapped data to the dispatcher dispatch callback below.
     await NewsStore.fetchNews();
     await ScheduleStore.fetchSchedule();
-    alt.bootstrap(JSON.stringify({ /* hack or awesome? */ }));
+    alt.bootstrap(JSON.stringify({ /* hack */ }));
 
     await Router.dispatch({ path: req.path, context }, (state, component) => {
       iso.add(
