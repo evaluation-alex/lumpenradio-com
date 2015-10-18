@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from './ScheduleList.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
+
+import ScheduleStore from '../../stores/ScheduleStore';
 
 @withStyles(styles)
 class ScheduleList extends React.Component {
 
   static propTypes = {
-    title: React.PropTypes.string,
-    items: React.PropTypes.array
+    title: PropTypes.string,
+    errorMessage: React.PropTypes.string,
+    schedule: PropTypes.array
   }
 
   static defaultProps = {
     title: 'Schedule',
-    items: []
-  }
-
-  componentWillMount() {
-    this.props.fetchSchedule();
+    schedule: []
   }
 
   render() {
-    const { items } = this.props;
+    const { schedule, errorMessage } = this.props;
+
+    if (errorMessage) {
+      return (
+        <div>{errorMessage}</div>
+      );
+    }
+
+    if (ScheduleStore.isLoading()) {
+      return (
+        <div>
+          Loading...
+        </div>
+      );
+    }
 
     return (
       <div className="ScheduleList">
@@ -30,8 +43,8 @@ class ScheduleList extends React.Component {
             <h1>{this.props.title}</h1>
           </div>
           <div className="ScheduleList-newsItems">
-            {items.map((listItem, i) => {
-              return `Item ${i}`
+            {schedule.map((scheduleItem, i) => {
+              return <div>{scheduleItem.showId}</div>;
             })}
           </div>
           <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>Next month →</a>

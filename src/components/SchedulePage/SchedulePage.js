@@ -17,6 +17,7 @@ class SchedulePage extends React.Component {
   render() {
     let title = 'Schedule';
     this.context.onSetTitle(title);
+
     return (
       <div className="SchedulePage">
         <div className="SchedulePage-container">

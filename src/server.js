@@ -14,6 +14,7 @@ const server = global.server = express();
 const iso = new Iso();
 
 import NewsStore from './stores/NewsStore';
+import ScheduleStore from './stores/ScheduleStore';
 
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(path.join(__dirname, 'public')));
@@ -39,6 +40,7 @@ server.get('*', async (req, res, next) => {
     };
 
     await NewsStore.fetchNews();
+    await ScheduleStore.fetchSchedule();
     alt.bootstrap(JSON.stringify({ /* hack or awesome? */ }));
 
     await Router.dispatch({ path: req.path, context }, (state, component) => {

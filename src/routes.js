@@ -18,8 +18,6 @@ import SponsorPage from './components/SponsorPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 
-import NewsStore from './stores/NewsStore';
-
 const router = new Router(on => {
   on('*', async (state, next) => {
     const component = await next();
