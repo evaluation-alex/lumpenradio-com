@@ -12,18 +12,18 @@ class NewsItem extends React.Component {
       slug: React.PropTypes.string,
       title: React.PropTypes.string
     }),
-    isSelected: React.PropTypes.bool
+    isHighlighted: React.PropTypes.bool
   }
 
   render() {
-    const { data, isSelected } = this.props;
+    const { data, isHighlighted } = this.props;
     data.title = data.title.toLowerCase();
 
     return (
       <div className="NewsItem">
         <div className="NewsItem-container">
           <a href={`/news/${data.slug}`}
-            className={ `NewsItem-link ${(isSelected) ? 'NewsItem-link--selected' : ''}` }
+            className={ `NewsItem-link ${(isHighlighted) ? 'NewsItem-link--highlight' : ''}` }
             onClick={Link.handleClick}>
             {data.title}
           </a>

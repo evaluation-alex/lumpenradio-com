@@ -1,3 +1,5 @@
+@import '../variables.css';
+
 .Navigation {
   margin-top: 5rem;
 }
@@ -19,6 +21,7 @@
 .Navigation-link:active,
 .Navigation-link:visited {
   color: #fff;
+  transition: background 0.25s ease-out;
 }
 
 .Navigation-link:hover {
@@ -29,8 +32,7 @@
   margin-right: 8px;
   margin-left: 8px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.15);
-  background-color: #FF5744;
+  background: var(--brand-primary);
 }
 .Navigation-link.Navigation-link--highlight {
   color: #fff;

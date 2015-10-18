@@ -27,6 +27,6 @@
   color: #000;
 }
 
-.NewsItem-link--selected {
+.NewsItem-link--highlight {
   background: var(--brand-primary);
 }
