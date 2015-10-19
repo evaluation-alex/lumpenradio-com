@@ -49,7 +49,7 @@ class ScheduleList extends React.Component {
 
     // Sort schedule items by date for presentation
     let sortByDate = (a, b) => {
-      return moment(b).subtract(moment(a));
+      return moment(a).subtract(moment(b));
     }
 
     // Filter out anything not in the current month
