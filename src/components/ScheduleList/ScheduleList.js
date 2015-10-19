@@ -55,6 +55,8 @@ class ScheduleList extends React.Component {
       );
     }
 
+    // TODO: Sort items by dateTime
+
     return (
       <div className="ScheduleList">
         <table className="ScheduleList-container">

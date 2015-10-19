@@ -44,7 +44,7 @@ class NewsStory extends React.Component {
       return (
         <div className="NewsStory">
           <div className="NewsStory-container">
-            <div dangerouslySetInnerHTML={markup} />
+            <article dangerouslySetInnerHTML={markup} />
           </div>
         </div>
       );
