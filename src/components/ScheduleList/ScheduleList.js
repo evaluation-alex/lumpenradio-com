@@ -13,13 +13,11 @@ import moment from 'moment';
 class ScheduleList extends React.Component {
 
   static propTypes = {
-    title: PropTypes.string,
     errorMessage: React.PropTypes.string,
     schedule: PropTypes.array
   }
 
   static defaultProps = {
-    title: 'Schedule',
     schedule: []
   }
 
@@ -59,17 +57,30 @@ class ScheduleList extends React.Component {
 
     return (
       <div className="ScheduleList">
-        <div className="ScheduleList-container">
-          <div className="ScheduleList-header">
-            <h1>{moment(now).format('MMMM')} {this.props.title}</h1>
-          </div>
-          <div className="ScheduleList-scheduleItems">
-            {schedule.filter(filterByDate).map((scheduleItem, i) => {
-              return <ScheduleItem key={i} {...scheduleItem} />
-            })}
-          </div>
-          <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>Next month →</a>
-        </div>
+        <table className="ScheduleList-container">
+          <caption>Upcoming events</caption>
+          <tbody className="ScheduleList-scheduleItems">
+              {schedule.filter(filterByDate).map((scheduleItem, i) => {
+                return (
+                  <ScheduleItem key={i} {...scheduleItem} />
+                )
+              })}
+          </tbody>
+          <thead className="ScheduleList-header">
+            <tr>
+              <th>{moment(now).format('MMMM')}</th>
+              <th>Show</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tfoot className="ScheduleList-footer">
+            <tr>
+              <td colSpan="3">
+                <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>Next month →</a>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     );
   }

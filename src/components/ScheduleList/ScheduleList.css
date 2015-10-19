@@ -1,12 +1,12 @@
 @import '../variables.css';
 
 .ScheduleList {
-
+  flex: 1;
 }
 
 .ScheduleList-container {
   font-variant: small-caps;
-  text-align: center;
+  width: 100%;
 }
 
 .ScheduleList-header {
@@ -14,3 +14,6 @@
   font-size: var(--font-size-h1);
 }
 
+.ScheduleList-footer {
+  border-top: 2px solid black;
+}

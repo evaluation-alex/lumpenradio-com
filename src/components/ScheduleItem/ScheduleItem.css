@@ -1,10 +1,10 @@
 @import '../variables.css';
 
 .ScheduleItem {
-
-}
-
-.ScheduleItem-container {
   border-top: 2px solid black;
 }
 
+.ScheduleItem-date,
+.ScheduleItem-time {
+  text-align: center;
+}
