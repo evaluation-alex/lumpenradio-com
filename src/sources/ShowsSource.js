@@ -9,6 +9,20 @@ import axios from 'axios';
 //   "description" : "Experimental electronic music of all kinds.",
 //   "id" : "idiot-business",
 //   "title" : "Idiot Business"
+// }, {
+//   "id" : "radio-free-bridgeport",
+//   "title" : "Radio Free Bridgeport"
+// }, {
+//   "id" : "todd-carter",
+//   "title" : "Todd Carter"
+// }, {
+//   "description" : "Take a trip through Latin America's vinyl past circa 1950s and on. Get ready for hard hitting cumbias, eccentric pop, garage rock and tropical sounds with a few surprises here and there. Also on deck will be themed shows, special guest selectors and spotlights of local bands that have caught the group's ears.",
+//   "id" : "sonoroma",
+//   "title" : "Sonoroma"
+// }, {
+//   "description" : "On the WLPN Bridgeport Transmissions radio program we'll spontaneously explore a vast collection of vinyl; from the earliest pressings to those of today, focusing on sincere, fearless, and thus innovative and soulful expressions that transcend eras and genres in hopes of tickling your noggin, kindlin' your heart and getting your booty rockin'.",
+//   "id" : "bridgeport-transmissions",
+//   "title" : "Bridgeport Transmissions"
 // } ]
 
 

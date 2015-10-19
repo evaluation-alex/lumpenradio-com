@@ -63,7 +63,16 @@ class ScheduleList extends React.Component {
           </div>
           <div className="ScheduleList-newsItems">
             {schedule.filter(filterByDate).map((scheduleItem, i) => {
-              return <div>{scheduleItem.showId}</div>;
+              let { show } = scheduleItem;
+              if (show) {
+                return (
+                  <div>
+                    <a key={i} href={`/shows/${show.id}`} onClick={Link.handleClick}>{show.title}</a>
+                  </div>
+                );
+              } else {
+                return <div key={i}>{scheduleItem.showId}</div>;
+              }
             })}
           </div>
           <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>Next month →</a>

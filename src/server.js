@@ -1,5 +1,3 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 import 'babel-core/polyfill';
 import path from 'path';
 import express from 'express';
@@ -14,6 +12,7 @@ const server = global.server = express();
 const iso = new Iso();
 
 import NewsStore from './stores/NewsStore';
+import ShowsStore from './stores/ShowsStore';
 import ScheduleStore from './stores/ScheduleStore';
 
 server.set('port', (process.env.PORT || 5000));

@@ -1,5 +1,3 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 import React from 'react';
 import Router from 'react-routing/src/Router';
 import http from './core/HttpClient';
@@ -40,6 +38,9 @@ const router = new Router(on => {
   on('/schedule', async () => <SchedulePage />);
 
   on('/shows', async () => <ShowsPage />);
+  on('/shows/:slug', async (req) => {
+    return <ShowsPage slug={req.params.slug} />
+  })
 
   on('/events', async () => <EventsPage />);
 

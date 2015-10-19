@@ -5,6 +5,10 @@ import withStyles from '../../decorators/withStyles';
 @withStyles(styles)
 class ShowsPage extends React.Component {
 
+  static propTypes = {
+    slug: React.PropTypes.string
+  }
+
   static contextTypes = {
     onSetTitle: PropTypes.func.isRequired
   };
@@ -12,6 +16,7 @@ class ShowsPage extends React.Component {
   render() {
     let title = 'Shows';
     this.context.onSetTitle(title);
+    const { slug } = this.props;
     return (
       <div className="ShowsPage">
         <div className="ShowsPage-container">
@@ -19,7 +24,7 @@ class ShowsPage extends React.Component {
             <h1>{title}</h1>
           </div>
           <div className="ShowsPage-body">
-            Almost showtime!
+            {(slug) ? slug : 'Almost showtime!'}
           </div>
         </div>
       </div>

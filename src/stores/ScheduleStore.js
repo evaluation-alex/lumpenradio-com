@@ -3,6 +3,8 @@ import makeHot from 'alt/utils/makeHot';
 
 import ScheduleActions from '../actions/ScheduleActions';
 import ScheduleSource from '../sources/ScheduleSource';
+
+import ShowsActions from '../actions/ShowsActions';
 import ShowsStore from './ShowsStore';
 
 class ScheduleStore {
@@ -10,10 +12,13 @@ class ScheduleStore {
     this.schedule = [];
     this.errorMessage = null;
 
+    ShowsStore.fetchShows();
+
     this.bindListeners({
       onUpdateSchedule: ScheduleActions.UPDATE_SCHEDULE,
       onFetchSchedule: ScheduleActions.FETCH_SCHEDULE,
-      onScheduleFailed: ScheduleActions.SCHEDULE_FAILED
+      onScheduleFailed: ScheduleActions.SCHEDULE_FAILED,
+      onShowsUpdated: ShowsActions.UPDATE_SHOWS
     });
 
     this.exportAsync(ScheduleSource);
@@ -22,13 +27,13 @@ class ScheduleStore {
   onUpdateSchedule(schedule) {
     this.schedule = schedule;
     this.error = null;
-    this.setShowInfo()
+    this.setShowsInfo();
     // optionally return false to suppress the store change event
   }
 
   onFetchSchedule() {
-    // reset the array while we're fetching new locations so React can
-    // be smart and render a spinner for us since the data is empty.
+    // reset the array while we're fetching so React can be
+    // smart and render a spinner for us since the data is empty.
     this.schedule = [];
   }
 
@@ -42,16 +47,14 @@ class ScheduleStore {
     });
   }
 
-  setShowInfo() {
-    this.waitFor(ShowsStore);
-
-    let shows = ShowsStore.getState().shows;
+  setShowsInfo() {
+    let { shows } = ShowsStore.getState();
 
     this.resetAllShowInfo();
 
     shows.forEach((show) => {
       // find each show in schedule
-      for (let scheduleItem of schedule) {
+      for (let scheduleItem of this.schedule) {
 
         // set show info
         if (show.id === scheduleItem.showId) {
@@ -60,6 +63,11 @@ class ScheduleStore {
         }
       }
     });
+  }
+
+  onShowsUpdated() {
+    this.waitFor(ShowsStore);
+    this.setShowsInfo();
   }
 
 }
