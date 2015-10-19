@@ -8,3 +8,7 @@
 .ScheduleItem-time {
   text-align: center;
 }
+
+.ScheduleItem--muted {
+  opacity: 0.5;
+}

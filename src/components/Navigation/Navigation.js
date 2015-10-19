@@ -55,7 +55,7 @@ class Navigation extends Component {
 
           // set class names, highlighting the selected link by location
           className = classNames({
-            'Navigation-link': true,
+            "Navigation-link": true,
             "Navigation-link--highlight": () => {
               if (!pathname) return;
               if (link.href === '/') {
