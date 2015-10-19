@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import styles from './ScheduleList.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
+import ScheduleItem from '../ScheduleItem';
+
+import AltContainer from 'alt/AltContainer';
 import ScheduleStore from '../../stores/ScheduleStore';
 
 import moment from 'moment';
@@ -24,7 +27,7 @@ class ScheduleList extends React.Component {
     super(props);
 
     this.state = {
-      now: Date()
+      now: moment()
     }
   }
 
@@ -58,21 +61,11 @@ class ScheduleList extends React.Component {
       <div className="ScheduleList">
         <div className="ScheduleList-container">
           <div className="ScheduleList-header">
-            <h1>{this.props.title}</h1>
-            <h2>{moment(now).format('MMMM')}</h2>
+            <h1>{moment(now).format('MMMM')} {this.props.title}</h1>
           </div>
-          <div className="ScheduleList-newsItems">
+          <div className="ScheduleList-scheduleItems">
             {schedule.filter(filterByDate).map((scheduleItem, i) => {
-              let { show } = scheduleItem;
-              if (show) {
-                return (
-                  <div>
-                    <a key={i} href={`/shows/${show.id}`} onClick={Link.handleClick}>{show.title}</a>
-                  </div>
-                );
-              } else {
-                return <div key={i}>{scheduleItem.showId}</div>;
-              }
+              return <ScheduleItem key={i} {...scheduleItem} />
             })}
           </div>
           <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>Next month →</a>

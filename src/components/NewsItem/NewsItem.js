@@ -17,6 +17,8 @@ class NewsItem extends React.Component {
 
   render() {
     const { data, isHighlighted } = this.props;
+
+    // make text lower-case for better display in small-caps
     data.title = data.title.toLowerCase();
 
     return (
