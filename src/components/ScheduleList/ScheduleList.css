@@ -6,14 +6,30 @@
 
 .ScheduleList-container {
   font-variant: small-caps;
+}
+
+.ScheduleList-table {
   width: 100%;
 }
 
-.ScheduleList-header {
+.ScheduleList-table td {
+  padding: 5px;
+}
+
+.ScheduleList-tableHeader {
   color: var(--brand-primary);
   font-size: var(--font-size-h1);
 }
 
-.ScheduleList-footer {
+.ScheduleList-tableFooter {
   border-top: 2px solid black;
+}
+
+.ScheduleList-moreLink {
+  display: block;
+  text-align: left;
+  padding: 5px 5px 5px 0;
+  font-size: 14px;
+  color: #FF5744;
+  text-decoration: none;
 }

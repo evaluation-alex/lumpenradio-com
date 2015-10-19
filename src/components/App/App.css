@@ -1,13 +1,13 @@
+/* @see https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
 @import '../../../node_modules/normalize.css/normalize.css';
-
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 @import '../variables.css';
 
 /*
  * Customizations
  * ========================================================================== */
 
+@import '../utilities.css';
 @font-face {
   font-family: 'Akkurat';
   src: url('/akkurat-regular.otf') format('otf');

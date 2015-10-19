@@ -47,6 +47,11 @@ class ScheduleList extends React.Component {
       );
     }
 
+    // Sort schedule items by date for presentation
+    let sortByDate = (a, b) => {
+      return moment(b).subtract(moment(a));
+    }
+
     // Filter out anything not in the current month
     let filterByDate = (item) => {
       return moment(item.dateTime).isBetween(
@@ -55,34 +60,34 @@ class ScheduleList extends React.Component {
       );
     }
 
-    // TODO: Sort items by dateTime
-
     return (
       <div className="ScheduleList">
-        <table className="ScheduleList-container">
-          <caption>Upcoming events</caption>
-          <tbody className="ScheduleList-scheduleItems">
-              {schedule.filter(filterByDate).map((scheduleItem, i) => {
-                return (
-                  <ScheduleItem key={i} {...scheduleItem} />
-                )
-              })}
-          </tbody>
-          <thead className="ScheduleList-header">
-            <tr>
-              <th>{moment(now).format('MMMM')}</th>
-              <th>Show</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tfoot className="ScheduleList-footer">
-            <tr>
-              <td colSpan="3">
-                <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>Next month →</a>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+        <div className="ScheduleList-container">
+          <table className="ScheduleList-table">
+            <caption className="u-isHiddenVisually">Upcoming events</caption>
+            <tbody className="ScheduleList-tableBody">
+                {schedule.sort(sortByDate).filter(filterByDate).map((scheduleItem, i) => {
+                  return <ScheduleItem key={i} {...scheduleItem} />;
+                })}
+            </tbody>
+            <thead className="ScheduleList-tableHeader">
+              <tr>
+                <th>{moment(now).format('MMMM')}</th>
+                <th>Show</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tfoot className="ScheduleList-tableFooter">
+              <tr>
+                <td colSpan="3">
+                  <a className="ScheduleList-moreLink" href="/schedule" onClick={Link.handleClick}>
+                    {moment(now).add(1, 'M').format('MMMM')} Shows →
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     );
   }
