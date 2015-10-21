@@ -11,10 +11,6 @@ import Html from './components/Html';
 const server = global.server = express();
 const iso = new Iso();
 
-import NewsStore from './stores/NewsStore';
-import ShowsStore from './stores/ShowsStore';
-import ScheduleStore from './stores/ScheduleStore';
-
 server.set('port', (process.env.PORT || 5000));
 server.use(express.static(path.join(__dirname, 'public')));
 
@@ -38,13 +34,8 @@ server.get('*', async (req, res, next) => {
       onPageNotFound: () => statusCode = 404,
     };
 
-    // TODO: Convert fetch operations to route handlers and hand-off
-    //   bootstrapped data to the dispatcher dispatch callback below.
-    await NewsStore.fetchNews();
-    await ScheduleStore.fetchSchedule();
-    alt.bootstrap(JSON.stringify({ /* hack */ }));
-
     await Router.dispatch({ path: req.path, context }, (state, component) => {
+      alt.bootstrap(alt.takeSnapshot());
       iso.add(
         ReactDOM.renderToString(component),
         alt.flush()

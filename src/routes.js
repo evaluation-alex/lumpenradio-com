@@ -1,52 +1,103 @@
 import React from 'react';
-import Router from 'react-routing/src/Router';
-import http from './core/HttpClient';
-import App from './components/App';
-import HomePage from './components/HomePage';
+import { Router } from 'react-routing';
 import ContentPage from './components/ContentPage';
-import ContactPage from './components/ContactPage';
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
-import SchedulePage from './components/SchedulePage';
-import ShowsPage from './components/ShowsPage';
-import NewsPage from './components/NewsPage';
-import EventsPage from './components/EventsPage';
-import InfoPage from './components/InfoPage';
-import SponsorPage from './components/SponsorPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 
 const router = new Router(on => {
   on('*', async (state, next) => {
+    const App = require('./components/App');
     const component = await next();
     return component && <App context={state.context}>{component}</App>;
   });
 
-  on('/', async () => <HomePage />);
+  // TODO: For proper Webpack code splitting verify page require
+  //   for const assign doesn't need to be wrapped in the function
+  //   passed back in Promise.all. See the react-routing README
+  //   for example: http://is.gd/b6Jpy7.
+  on('/', async () => {
+    const NewsStore = require('./stores/NewsStore');
+    await Promise.all([
+      NewsStore.fetchNews(),
+      new Promise(resolve => require.ensure(['./components/HomePage'], resolve))
+    ]);
+    const HomePage = require('./components/HomePage');
+    return <HomePage />;
+  });
 
-  on('/contact', async () => <ContactPage />);
+  on('/contact', async () => {
+    const ContactPage = require('./components/ContactPage');
+    return <ContactPage />;
+  });
 
-  on('/login', async () => <LoginPage />);
+  on('/login', async () => {
+    const LoginPage = require('./components/LoginPage');
+    return <LoginPage />;
+  });
 
-  on('/register', async () => <RegisterPage />);
+  on('/register', async () => {
+    const RegisterPage = require('./components/RegisterPage');
+    return <RegisterPage />;
+  });
 
-  on('/news', async () => <NewsPage />);
+  // TODO: We're bootstrapping the NewsStore on the HomePage
+  //   path. Verify news only fetched here if deep link to path.
+  on('/news', async () => {
+    const NewsStore = require('./stores/NewsStore');
+    await Promise.all([
+      NewsStore.fetchNews(),
+      new Promise(resolve => require.ensure(['./components/NewsPage'], resolve))
+    ]);
+    const NewsPage = require('./components/NewsPage');
+    return <NewsPage />;
+  });
+
   on('/news/:slug', async (req) => {
+    const NewsStore = require('./stores/NewsStore');
+    await Promise.all([
+      NewsStore.fetchNews(),
+      new Promise(resolve => require.ensure(['./components/NewsPage'], resolve))
+    ]);
+    const NewsPage = require('./components/NewsPage');
     return <NewsPage slug={req.params.slug} />;
   });
 
-  on('/schedule', async () => <SchedulePage />);
+  on('/schedule', async () => {
+    const ShowsStore = require('./stores/ShowsStore');
+    const ScheduleStore = require('./stores/ScheduleStore');
+    await Promise.all([
+      ShowsStore.fetchShows(),
+      ScheduleStore.fetchSchedule(),
+      new Promise(resolve => require.ensure(['./components/SchedulePage'], resolve))
+    ]);
+    const SchedulePage = require('./components/SchedulePage');
+    return <SchedulePage />;
+  });
 
-  on('/shows', async () => <ShowsPage />);
+  on('/shows', async () => {
+    const ShowsPage = require('./components/ShowsPage');
+    return <ShowsPage />;
+  });
+
   on('/shows/:slug', async (req) => {
-    return <ShowsPage slug={req.params.slug} />
+    const ShowsPage = require('./components/ShowsPage');
+    return <ShowsPage slug={req.params.slug} />;
   })
 
-  on('/events', async () => <EventsPage />);
+  on('/events', async () => {
+    const EventsPage = require('./components/EventsPage');
+    return <EventsPage />;
+  });
 
-  on('/info', async () => <InfoPage />);
+  on('/info', async () => {
+    const InfoPage = require('./components/InfoPage');
+    return <InfoPage />;
+  });
 
-  on('/sponsor', async () => <SponsorPage />);
+  on('/sponsor', async () => {
+    const SponsorPage = require('./components/SponsorPage');
+    return <SponsorPage />;
+  });
 
   on('*', async (state) => {
     const content = await http.get(`/api/content?path=${state.path}`);
