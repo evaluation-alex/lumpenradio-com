@@ -25,7 +25,7 @@ class ScheduleItem extends React.Component {
     let displayTime = moment(dateTime).format('h:mmA')
 
     // terminate early if schedule not hydrated with show info
-    if (!show) return <div key={i}>{scheduleItem.showId}</div>;
+    if (!show) return <div key={showId}>{showId}</div>;
 
     // make text lower-case for better display in small-caps
     show.title = show.title.toLowerCase();
