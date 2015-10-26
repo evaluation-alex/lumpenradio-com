@@ -1,4 +1,5 @@
 import React from 'react';
+import http from './core/HttpClient';
 import { Router } from 'react-routing';
 import ContentPage from './components/ContentPage';
 import NotFoundPage from './components/NotFoundPage';
