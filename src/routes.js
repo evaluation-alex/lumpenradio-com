@@ -80,9 +80,15 @@ const router = new Router(on => {
     return <ShowsPage />;
   });
 
-  on('/shows/:slug', async (req) => {
-    const ShowsPage = require('./components/ShowsPage');
-    return <ShowsPage slug={req.params.slug} />;
+  on('/shows/:id', async (req) => {
+    const ShowsStore = require('./stores/ShowsStore');
+    await Promise.all([
+      ShowsStore.fetchShows(),
+      new Promise(resolve => require.ensure(['./components/ShowDetailsPage'], resolve))
+    ]);
+    const ShowDetailsPage = require('./components/ShowDetailsPage');
+    // TODO: Don't blow up. Return 404 if not found.
+    return <ShowDetailsPage show={ShowsStore.getShow(req.params.id)} />;
   })
 
   on('/events', async () => {

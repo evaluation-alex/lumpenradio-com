@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.ShowDetailsPage-container {
+  padding: 0.5em;
+}
+
+.ShowDetailsPage-body {
+  display: flex;
+  flex-direction: row;
+}

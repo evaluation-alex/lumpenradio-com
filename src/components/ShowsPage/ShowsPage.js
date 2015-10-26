@@ -6,7 +6,7 @@ import withStyles from '../../decorators/withStyles';
 class ShowsPage extends React.Component {
 
   static propTypes = {
-    slug: React.PropTypes.string
+    id: React.PropTypes.string
   }
 
   static contextTypes = {
@@ -16,7 +16,7 @@ class ShowsPage extends React.Component {
   render() {
     let title = 'Shows';
     this.context.onSetTitle(title);
-    const { slug } = this.props;
+    const { id } = this.props;
     return (
       <div className="ShowsPage">
         <div className="ShowsPage-container">
@@ -24,7 +24,7 @@ class ShowsPage extends React.Component {
             <h1>{title}</h1>
           </div>
           <div className="ShowsPage-body">
-            {(slug) ? slug : 'Almost showtime!'}
+            {(id) ? id : 'Almost showtime!'}
           </div>
         </div>
       </div>

@@ -15,6 +15,10 @@ class ShowsStore {
       onShowsFailed: ShowsActions.SHOWS_FAILED
     });
 
+    this.exportPublicMethods({
+      getShow: this.getShow
+    });
+
     this.exportAsync(ShowsSource);
   }
 
@@ -34,6 +38,16 @@ class ShowsStore {
     this.errorMessage = errorMessage;
   }
 
+  getShow(id) {
+    let { shows } = this.getState();
+    for (let i = 0; i < shows.length; i++) {
+      if (shows[i].id === id) {
+        return shows[i];
+      }
+    }
+
+    return null;
+  }
 }
 
 export default makeHot(alt, ShowsStore);
