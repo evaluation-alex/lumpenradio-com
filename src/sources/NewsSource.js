@@ -31,14 +31,20 @@ let NewsSource = {
         return res.data;
       },
 
-      local() {
-        // Never check locally, always fetch remotely.
-        return null;
+      local(state) {
+        return state.news.length ? state.news : null;
       },
 
-      success: NewsActions.updateNews,
-      error: NewsActions.newsFailed,
-      loading: NewsActions.fetchNews
+      loading: NewsActions.fetchNews, // (optional)
+      success: NewsActions.updateNews, // (required)
+      error: NewsActions.newsFailed, // (required)
+
+      // should fetch has precedence over the value returned by local
+      // in determining whether remote should be called
+      shouldFetch(state) {
+        // TODO: Intelligently determine if a fetch should be performed
+        return true; // return cached value, firing off remote request anyway
+      }
     }
   }
 };

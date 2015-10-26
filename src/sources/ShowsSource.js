@@ -34,14 +34,20 @@ let ShowsSource = {
         return res.data;
       },
 
-      local() {
-        // Never check locally, always fetch remotely.
-        return null;
+      local(state) {
+        return state.shows.length ? state.shows : null;
       },
 
       success: ShowsActions.updateShows,
       error: ShowsActions.showsFailed,
-      loading: ShowsActions.fetchShows
+      loading: ShowsActions.fetchShows,
+
+      // should fetch has precedence over the value returned by local
+      // in determining whether remote should be called
+      shouldFetch(state) {
+        // TODO: Intelligently determine if a fetch should be performed
+        return true; // return cached value, firing off remote request anyway
+      }
     }
   }
 };
