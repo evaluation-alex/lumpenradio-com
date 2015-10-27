@@ -21,6 +21,7 @@
     "moment": "^2.10.6",
     "normalize.css": "3.0.3",
     "react": "0.14.0",
+    "react-addons-css-transition-group": "^0.14.0",
     "react-dom": "0.14.0",
     "react-routing": "0.0.5",
     "showdown": "^1.2.3",

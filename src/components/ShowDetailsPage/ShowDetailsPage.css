@@ -12,7 +12,21 @@
 .ShowDetailsPage-header {
   color: var(--brand-primary);
   font-size: var(--font-size-h1);
+}
+
+.ShowDetailsPage-aboutHeader {
+  color: var(--brand-primary);
+  font-size: var(--font-size-h1);
   text-align: center;
+  border-bottom: var(--borders-thin-solid-dark);
+}
+
+.ShowDetailsPage-aboutImage {
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  max-height: 500px;
+  max-width: 500px;
 }
 
 .ShowDetailsPage-linksAndInfo {
@@ -28,4 +42,15 @@
 .ShowDetailsPage-episodes {
   flex: 1;
   margin: 0.5rem;
+}
+
+/* == ReactCSSTransitionGroup == */
+
+.ShowDetailsPage-aboutImage-appear {
+  opacity: 0.01;
+}
+
+.ShowDetailsPage-aboutImage-appear.ShowDetailsPage-aboutImage-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in; /* Animation var() not working here */
 }

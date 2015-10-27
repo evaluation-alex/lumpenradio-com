@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './ShowDetailsPage.css';
 import withStyles from '../../decorators/withStyles';
 import NewsList from '../NewsList';
@@ -17,6 +18,7 @@ class ShowDetailsPage extends React.Component {
     onSetTitle: PropTypes.func.isRequired
   };
 
+  // TODO: Adjust image animation to load more smoothly on an unprimed cache
   render() {
     const { show } = this.props;
     let title = show.title;
@@ -32,9 +34,15 @@ class ShowDetailsPage extends React.Component {
               <NewsList title="Links/Info" />
             </section>
             <section className="ShowDetailsPage-about">
-              <div className="ShowDetailsPage-header">
+              <div className="ShowDetailsPage-aboutHeader">
                 <h1>About</h1>
               </div>
+              <ReactCSSTransitionGroup
+                transitionName="ShowDetailsPage-aboutImage"
+                transitionAppear={true}
+                transitionAppearTimeout={500}>
+                <img src={show.logoHref} className="ShowDetailsPage-aboutImage" />
+              </ReactCSSTransitionGroup>
               {(show.description) ? show.description : show.id}
             </section>
             <section className="ShowDetailsPage-episodes">
