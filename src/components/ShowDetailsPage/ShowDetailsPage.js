@@ -15,7 +15,9 @@ class ShowDetailsPage extends React.Component {
       logoHref: PropTypes.string.isRequired,
       hosts: PropTypes.shape({
         artistId: PropTypes.string.isRequired,
-        artist: PropTypes.object
+        artist: PropTypes.shape({
+          name: PropTypes.string.isRequired
+        })
       })
     }).isRequired
   }
@@ -24,11 +26,26 @@ class ShowDetailsPage extends React.Component {
     onSetTitle: PropTypes.func.isRequired
   };
 
-  // TODO: Adjust image animation to load more smoothly on an unprimed cache
+  // TODO: Adjust image animation to load more smoothly
+  //   - Add cache headers to AWS
+  //   - Compress and progressively load JPG images
   render() {
     const { show } = this.props;
+
     let pageTitle = `${show.title} | WLPN`;
     this.context.onSetTitle(pageTitle);
+
+    let showTitle = () => {
+      let { hosts } = show;
+      if (hosts) {
+        let hostNames = hosts.map(
+          host => (host.artist) ? host.artist.name : host.artistId
+        );
+        let artistsString = hostNames.join(' / ');
+        return `${artistsString} \/\/ ${show.title}`;
+      } else return show.title;
+    }();
+
     return (
       <div className="ShowDetailsPage">
         <section className="ShowDetailsPage-linksAndInfo">
@@ -48,7 +65,7 @@ class ShowDetailsPage extends React.Component {
             <img key={show.id} src={show.logoHref} className="ShowDetailsPage-aboutImage" />
           </ReactCSSTransitionGroup>
           <div className="ShowDetailsPage-aboutHeadline">
-            <h2>{show.title}</h2>
+            <h2>{showTitle}</h2>
           </div>
           {(show.description) ? show.description : show.id}
         </section>
