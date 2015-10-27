@@ -47,10 +47,11 @@ class Navigation extends Component {
       <div className={classNames(this.props.className, 'Navigation')}>
         {INTERNAL_LINKS.map((link, i) => {
           let { pathname } = location;
+          let linkBody = link.body;
 
           // make text lower-case for better display in small-caps
-          (typeof link.body === 'string')
-            ? link.body = link.body.toLowerCase()
+          (typeof linkBody === 'string')
+            ? linkBody = linkBody.toLowerCase()
             : null;
 
           // set class names, highlighting the selected link by location
@@ -66,7 +67,7 @@ class Navigation extends Component {
             }()
           })
           return (
-            <a key={i} className={className} href={link.href} onClick={Link.handleClick}>{link.body}</a>
+            <a key={i} className={className} href={link.href} onClick={Link.handleClick}>{linkBody}</a>
           )
         })}
         <a className="Navigation-link" href="http://underthecounterculture.bigcartel.com" target="_blank">shop</a>

@@ -16,10 +16,11 @@ let eventData = [
 class NewsAndEvents extends React.Component {
 
   render() {
+    let title;
 
     // make text lower-case for better display in small-caps
     eventData = eventData.map( (item) => {
-      item.title = item.title.toLowerCase();
+      title = item.title.toLowerCase();
       return item;
     });
     return (

@@ -41,7 +41,7 @@ class ShowDetailsPage extends React.Component {
                 transitionName="ShowDetailsPage-aboutImage"
                 transitionAppear={true}
                 transitionAppearTimeout={500}>
-                <img src={show.logoHref} className="ShowDetailsPage-aboutImage" />
+                <img key={show.id} src={show.logoHref} className="ShowDetailsPage-aboutImage" />
               </ReactCSSTransitionGroup>
               {(show.description) ? show.description : show.id}
             </section>

@@ -28,7 +28,7 @@ class ScheduleItem extends React.Component {
     if (!show) return <div key={showId}>{showId}</div>;
 
     // make text lower-case for better display in small-caps
-    show.title = show.title.toLowerCase();
+    let title = show.title.toLowerCase();
 
     let itemClassName = classNames({
       "ScheduleItem": true,
@@ -41,7 +41,7 @@ class ScheduleItem extends React.Component {
            {displayDate}
         </td>
         <td className="ScheduleItem-show">
-           <a href={`/shows/${show.id}`} onClick={Link.handleClick}>{show.title}</a>
+           <a href={`/shows/${show.id}`} onClick={Link.handleClick}>{title}</a>
         </td>
         <td className="ScheduleItem-time">
            {displayTime}

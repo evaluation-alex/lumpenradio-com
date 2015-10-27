@@ -19,7 +19,7 @@ class NewsItem extends React.Component {
     const { data, isHighlighted } = this.props;
 
     // make text lower-case for better display in small-caps
-    data.title = data.title.toLowerCase();
+    let title = data.title.toLowerCase();
 
     return (
       <div className="NewsItem">
@@ -27,7 +27,7 @@ class NewsItem extends React.Component {
           <a href={`/news/${data.slug}`}
             className={ `NewsItem-link ${(isHighlighted) ? 'NewsItem-link--highlight' : ''}` }
             onClick={Link.handleClick}>
-            {data.title}
+            {title}
           </a>
         </div>
       </div>
