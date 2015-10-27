@@ -25,31 +25,29 @@ class ShowDetailsPage extends React.Component {
     this.context.onSetTitle(title);
     return (
       <div className="ShowDetailsPage">
-        <div className="ShowDetailsPage-container">
-          <div className="ShowDetailsPage-header">
-            <h1>{title}</h1>
+        <section className="ShowDetailsPage-linksAndInfo">
+          <NewsList title="Links/Info" />
+        </section>
+
+        <section className="ShowDetailsPage-about">
+          <header className="ShowDetailsPage-aboutHeader">
+            <h1>About</h1>
+          </header>
+          <ReactCSSTransitionGroup
+            transitionName="ShowDetailsPage-aboutImage"
+            transitionAppear={true}
+            transitionAppearTimeout={500}>
+            <img key={show.id} src={show.logoHref} className="ShowDetailsPage-aboutImage" />
+          </ReactCSSTransitionGroup>
+          <div className="ShowDetailsPage-aboutHeadline">
+            <h2>{show.title}</h2>
           </div>
-          <div className="ShowDetailsPage-body">
-            <section className="ShowDetailsPage-linksAndInfo">
-              <NewsList title="Links/Info" />
-            </section>
-            <section className="ShowDetailsPage-about">
-              <div className="ShowDetailsPage-aboutHeader">
-                <h1>About</h1>
-              </div>
-              <ReactCSSTransitionGroup
-                transitionName="ShowDetailsPage-aboutImage"
-                transitionAppear={true}
-                transitionAppearTimeout={500}>
-                <img key={show.id} src={show.logoHref} className="ShowDetailsPage-aboutImage" />
-              </ReactCSSTransitionGroup>
-              {(show.description) ? show.description : show.id}
-            </section>
-            <section className="ShowDetailsPage-episodes">
-              <NewsList title="Episodes" />
-            </section>
-          </div>
-        </div>
+          {(show.description) ? show.description : show.id}
+        </section>
+
+        <section className="ShowDetailsPage-episodes">
+          <NewsList title="Episodes" />
+        </section>
       </div>
     );
   }

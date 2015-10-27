@@ -1,18 +1,11 @@
 @import '../variables.css';
 
-.ShowDetailsPage-container {
+.ShowDetailsPage {
   padding: 0.5em;
-}
-
-.ShowDetailsPage-body {
   display: flex;
   flex-direction: row;
 }
 
-.ShowDetailsPage-header {
-  color: var(--brand-primary);
-  font-size: var(--font-size-h1);
-}
 
 .ShowDetailsPage-aboutHeader {
   color: var(--brand-primary);
@@ -25,8 +18,14 @@
   display: block;
   margin: auto;
   padding: 1rem;
-  max-height: 500px;
-  max-width: 500px;
+  max-height: 320px;
+  max-width: 320px;
+}
+
+.ShowDetailsPage-aboutHeadline {
+  color: var(--brand-primary);
+  font-size: var(--font-size-h1);
+  text-align: center;
 }
 
 .ShowDetailsPage-linksAndInfo {
