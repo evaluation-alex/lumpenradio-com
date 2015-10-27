@@ -41,6 +41,11 @@ class ScheduleStore {
     this.errorMessage = errorMessage;
   }
 
+  onShowsUpdated() {
+    this.waitFor(ShowsStore);
+    this.setShowsInfo();
+  }
+
   resetAllShowInfo() {
     this.schedule.forEach((scheduleItem) => {
       return (scheduleItem.show) ? delete scheduleItem.show : null;
@@ -63,11 +68,6 @@ class ScheduleStore {
         }
       }
     });
-  }
-
-  onShowsUpdated() {
-    this.waitFor(ShowsStore);
-    this.setShowsInfo();
   }
 
 }

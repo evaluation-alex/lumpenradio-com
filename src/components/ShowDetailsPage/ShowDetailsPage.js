@@ -4,14 +4,20 @@ import styles from './ShowDetailsPage.css';
 import withStyles from '../../decorators/withStyles';
 import NewsList from '../NewsList';
 
-import AltContainer from 'alt/AltContainer';
-import ShowsStore from '../../stores/ShowsStore';
-
 @withStyles(styles)
 class ShowDetailsPage extends React.Component {
 
   static propTypes = {
-    show: React.PropTypes.object.isRequired
+    show: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      logoHref: PropTypes.string.isRequired,
+      hosts: PropTypes.shape({
+        artistId: PropTypes.string.isRequired,
+        artist: PropTypes.object
+      })
+    }).isRequired
   }
 
   static contextTypes = {
@@ -21,8 +27,8 @@ class ShowDetailsPage extends React.Component {
   // TODO: Adjust image animation to load more smoothly on an unprimed cache
   render() {
     const { show } = this.props;
-    let title = show.title;
-    this.context.onSetTitle(title);
+    let pageTitle = `${show.title} | WLPN`;
+    this.context.onSetTitle(pageTitle);
     return (
       <div className="ShowDetailsPage">
         <section className="ShowDetailsPage-linksAndInfo">
@@ -35,6 +41,8 @@ class ShowDetailsPage extends React.Component {
           </header>
           <ReactCSSTransitionGroup
             transitionName="ShowDetailsPage-aboutImage"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
             transitionAppear={true}
             transitionAppearTimeout={500}>
             <img key={show.id} src={show.logoHref} className="ShowDetailsPage-aboutImage" />

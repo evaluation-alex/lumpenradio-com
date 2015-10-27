@@ -5,7 +5,6 @@ import ScheduleList from '../ScheduleList';
 
 import AltContainer from 'alt/AltContainer';
 import ScheduleStore from '../../stores/ScheduleStore';
-import ScheduleActions from '../../actions/ScheduleActions';
 
 @withStyles(styles)
 class SchedulePage extends React.Component {
@@ -26,8 +25,7 @@ class SchedulePage extends React.Component {
           </div>
           <div className="SchedulePage-body">
             <AltContainer
-              store={ScheduleStore}
-              actions={ScheduleActions}>
+              store={ScheduleStore}>
               <ScheduleList />
             </AltContainer>
           </div>

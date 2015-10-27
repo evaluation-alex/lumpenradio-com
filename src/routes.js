@@ -82,12 +82,14 @@ const router = new Router(on => {
 
   on('/shows/:id', async (req) => {
     const ShowsStore = require('./stores/ShowsStore');
+    const ArtistsStore = require('./stores/ArtistsStore');
     await Promise.all([
+      ArtistsStore.fetchArtists(),
       ShowsStore.fetchShows(),
       new Promise(resolve => require.ensure(['./components/ShowDetailsPage'], resolve))
     ]);
     const ShowDetailsPage = require('./components/ShowDetailsPage');
-    // TODO: Don't blow up. Return 404 if not found.
+    // TODO: Don't blow up. Return 404 if not found. Do alike for similar routes.)
     return <ShowDetailsPage show={ShowsStore.getShow(req.params.id)} />;
   })
 

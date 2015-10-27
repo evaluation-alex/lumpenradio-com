@@ -4,6 +4,9 @@ import makeHot from 'alt/utils/makeHot';
 import ShowsActions from '../actions/ShowsActions';
 import ShowsSource from '../sources/ShowsSource';
 
+import ArtistsActions from '../actions/ArtistsActions';
+import ArtistsStore from './ArtistsStore';
+
 class ShowsStore {
   constructor() {
     this.shows = [];
@@ -12,7 +15,8 @@ class ShowsStore {
     this.bindListeners({
       onUpdateShows: ShowsActions.UPDATE_SHOWS,
       onFetchShows: ShowsActions.FETCH_SHOWS,
-      onShowsFailed: ShowsActions.SHOWS_FAILED
+      onShowsFailed: ShowsActions.SHOWS_FAILED,
+      onHostsUpdated: ArtistsActions.UPDATE_ARTISTS
     });
 
     this.exportPublicMethods({
@@ -25,6 +29,7 @@ class ShowsStore {
   onUpdateShows(shows) {
     this.shows = shows;
     this.error = null;
+    this.setHostsInfo();
     // optionally return false to suppress the store change event
   }
 
@@ -38,10 +43,46 @@ class ShowsStore {
     this.errorMessage = errorMessage;
   }
 
-  getShow(id) {
+  onHostsUpdated() {
+    this.waitFor(ArtistsStore);
+    this.setHostsInfo();
+  }
+
+  resetAllHostsInfo() {
+    this.shows.forEach((show) => {
+      let { hosts } = show;
+      if (hosts) {
+        hosts.forEach((host) => {
+          delete host.artist;
+        });
+      }
+    });
+  }
+
+  setHostsInfo() {
+    let { artists } = ArtistsStore.getState();
+
+    this.resetAllHostsInfo();
+
+    // set hosts info for each show
+    this.shows.forEach((show) => {
+      let { hosts } = show;
+      if (hosts) {
+        hosts.forEach((host) => {
+          artists.forEach((artist) => {
+            if (host.artistId === artist.id) {
+              host.artist = artist;
+            }
+          });
+        });
+      };
+    });
+  }
+
+  getShow(showId) {
     let { shows } = this.getState();
     for (let i = 0; i < shows.length; i++) {
-      if (shows[i].id === id) {
+      if (shows[i].id === showId) {
         return shows[i];
       }
     }
