@@ -2,8 +2,8 @@
 
 :root {
 
-  /*
-   * Colors
+  /* == Colors
+   * Gray and brand colors for use across the app.
    * ======================================================================== */
 
   --white-base:            hsl(255, 255, 255);
@@ -15,22 +15,22 @@
 
   --brand-primary:         #FF5744;
 
-  /*
-   * Typography
+  /* == Typography
+   * Font, line-height, and color for body text, headings, and more.
    * ======================================================================== */
 
   --font-family-base:      'Akkurat', 'Segoe UI', 'HelveticaNeue-Light', sans-serif;
 
   --font-size-h1:          22px;
 
-  /*
-   * Layout
+  /* == Layout
+   * Define application wide layout constraints. See Components for layout components.
    * ======================================================================== */
 
   --max-content-width:     1000px;
 
-  /*
-   * Media queries breakpoints
+  /* == Media queries breakpoints
+   * Define the breakpoints at which your layout will change, adapting to different screen sizes.
    * ======================================================================== */
 
   --screen-xs-min:         480px;  /* Extra small screen / phone */
@@ -38,10 +38,17 @@
   --screen-md-min:         992px;  /* Medium screen / desktop */
   --screen-lg-min:         1200px; /* Large screen / wide desktop */
 
-  /*
-   * Animations
+  /* == Animations
+   * Define transitions applied to enhance user experience through motion.
    * ======================================================================== */
 
   --animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
+  --animation-easy-out:    .90s ease-out;
+
+  /* == Components
+   * Define common padding and border radius sizes and more.
+   * ======================================================================== */
+
+   --borders-thin-solid-dark: 2px solid black;
 
 }

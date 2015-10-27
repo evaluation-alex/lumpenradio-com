@@ -5,6 +5,6 @@
 }
 
 .NewsStory-container {
-  border-top: 2px solid black;
+  border-top: var(--borders-thin-solid-dark);
 }
 

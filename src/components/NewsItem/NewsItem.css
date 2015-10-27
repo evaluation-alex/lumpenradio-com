@@ -5,7 +5,7 @@
 }
 
 .NewsItem-container {
-  border-top: 2px solid black;
+  border-top: var(--borders-thin-solid-dark);
 }
 
 .NewsItem-link {
@@ -23,8 +23,8 @@
   display: block;
   padding: 14px 0;
   background: transparent;
-  transition: background 0.25s ease-out;
-  color: #000;
+  transition: background var(--animation-swift-out);
+  color: black;
 }
 
 .NewsItem-link--highlight {

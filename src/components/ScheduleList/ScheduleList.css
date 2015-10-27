@@ -22,7 +22,7 @@
 }
 
 .ScheduleList-tableFooter {
-  border-top: 2px solid black;
+  border-top: var(--borders-thin-solid-dark);
 }
 
 .ScheduleList-moreLink {
@@ -30,6 +30,6 @@
   text-align: left;
   padding: 5px 5px 5px 0;
   font-size: 14px;
-  color: #FF5744;
+  color: var(--brand-primary);
   text-decoration: none;
 }

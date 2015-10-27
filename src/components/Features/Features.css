@@ -11,6 +11,6 @@
 .Features-banner {
   text-align: center;
   font-variant: small-caps;
-  color: #FF5744;
+  color: var(--brand-primary);
   font-size: 14px;
 }

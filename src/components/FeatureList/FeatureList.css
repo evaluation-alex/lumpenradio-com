@@ -15,8 +15,8 @@
 .FeatureList-moreLink {
   text-align: left;
   padding: 5px 5px 5px 0;
-  border-top: 2px solid black;
+  border-top: var(--borders-thin-solid-dark);
   font-size: 14px;
-  color: #FF5744;
+  color: var(--brand-primary);
   text-decoration: none;
 }

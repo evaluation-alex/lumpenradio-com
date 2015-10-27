@@ -8,3 +8,24 @@
   display: flex;
   flex-direction: row;
 }
+
+.ShowDetailsPage-header {
+  color: var(--brand-primary);
+  font-size: var(--font-size-h1);
+  text-align: center;
+}
+
+.ShowDetailsPage-linksAndInfo {
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.ShowDetailsPage-about {
+  flex: 3;
+  margin: 0.5rem;
+}
+
+.ShowDetailsPage-episodes {
+  flex: 1;
+  margin: 0.5rem;
+}

@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './ShowDetailsPage.css';
 import withStyles from '../../decorators/withStyles';
+import NewsList from '../NewsList';
 
 import AltContainer from 'alt/AltContainer';
 import ShowsStore from '../../stores/ShowsStore';
@@ -18,7 +19,7 @@ class ShowDetailsPage extends React.Component {
 
   render() {
     const { show } = this.props;
-    let title = `Shows - ${show.title}`;
+    let title = show.title;
     this.context.onSetTitle(title);
     return (
       <div className="ShowDetailsPage">
@@ -27,7 +28,18 @@ class ShowDetailsPage extends React.Component {
             <h1>{title}</h1>
           </div>
           <div className="ShowDetailsPage-body">
-            {(show.description) ? show.description : show.id}
+            <section className="ShowDetailsPage-linksAndInfo">
+              <NewsList title="Links/Info" />
+            </section>
+            <section className="ShowDetailsPage-about">
+              <div className="ShowDetailsPage-header">
+                <h1>About</h1>
+              </div>
+              {(show.description) ? show.description : show.id}
+            </section>
+            <section className="ShowDetailsPage-episodes">
+              <NewsList title="Episodes" />
+            </section>
           </div>
         </div>
       </div>

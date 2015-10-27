@@ -5,7 +5,7 @@
 }
 
 .EventItem-container {
-  border-top: 2px solid black;
+  border-top: var(--borders-thin-solid-dark);
 }
 
 .EventItem-link {
@@ -22,5 +22,5 @@
 .EventItem-link:visited {
   display: block;
   padding: 14px 0;
-  color: #000;
+  color: black;
 }

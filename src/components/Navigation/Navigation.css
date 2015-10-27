@@ -7,7 +7,8 @@
 .Navigation-link {
   display: block;
   margin: 5px;
-  border: 2px solid #FF5744;
+  border: var(--borders-thin-solid-dark);
+  border-color: var(--brand-primary);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   font-variant: small-caps;
@@ -21,7 +22,7 @@
 .Navigation-link:active,
 .Navigation-link:visited {
   color: #fff;
-  transition: background 0.25s ease-out;
+  transition: background var(--animation-easy-out);
 }
 
 .Navigation-link:hover {
@@ -39,6 +40,6 @@
 }
 
 .Navigation-link--highlight:hover {
-  background-color: #FF5744;
+  background-color: var(--brand-primary);
 }
 

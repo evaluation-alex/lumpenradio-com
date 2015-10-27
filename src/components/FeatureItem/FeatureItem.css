@@ -1,13 +1,13 @@
 @import '../variables.css';
 
 .FeatureItem {
-  border: 2px solid black;
+  border: var(--borders-thin-solid-dark);
   margin-bottom: 22px;
   font-size: 14px;
 }
 
 .FeatureItem-banner {
-  border-bottom: 2px solid black;
+  border-bottom: var(--borders-thin-solid-dark);
   padding: 3px 8px;
   text-align: center;
   font-variant: small-caps;
