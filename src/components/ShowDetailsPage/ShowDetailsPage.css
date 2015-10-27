@@ -7,14 +7,21 @@
 }
 
 
-.ShowDetailsPage-aboutHeader {
+.ShowDetailsPage-hostInfo__header,
+.ShowDetailsPage-about__header,
+.ShowDetailsPage-episodes__header {
   color: var(--brand-primary);
-  font-size: var(--font-size-h1);
-  text-align: center;
   border-bottom: var(--borders-thin-solid-dark);
+  text-align: center;
 }
 
-.ShowDetailsPage-aboutImage {
+.ShowDetailsPage-hostInfo__header h1,
+.ShowDetailsPage-about__header h1,
+.ShowDetailsPage-episodes__header h1 {
+  font-size: var(--font-size-h1);
+}
+
+.ShowDetailsPage-aboutImage__image {
   display: block;
   margin: auto;
   padding: 1rem;
@@ -28,9 +35,13 @@
   text-align: center;
 }
 
-.ShowDetailsPage-linksAndInfo {
+.ShowDetailsPage-hostInfo {
   flex: 1;
   margin: 0.5rem;
+}
+
+.ShowDetailsPage-hostInfoItem {
+  margin: 0.25rem;
 }
 
 .ShowDetailsPage-about {
@@ -41,6 +52,13 @@
 .ShowDetailsPage-episodes {
   flex: 1;
   margin: 0.5rem;
+}
+
+.ShowDetailsPage-hostInfoItem,
+.ShowDetailsPage-episodesItem {
+  padding: 14px 0;
+  text-decoration: none;
+  border-bottom: var(--borders-thin-solid-dark);
 }
 
 /* == ReactCSSTransitionGroup == */
