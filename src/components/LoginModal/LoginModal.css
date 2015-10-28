@@ -1,0 +1,10 @@
+@import '../variables.css';
+
+.LoginModal {
+
+}
+
+.LoginModal-container {
+  margin: 0 auto;
+  padding: 20px 0;
+}

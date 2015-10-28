@@ -1,4 +1,7 @@
-/* @see https://github.com/twbs/bootstrap/blob/master/less/variables.less */
+/* ==========================================================================
+   Variables
+   @see https://github.com/twbs/bootstrap/blob/master/less/variables.less
+   ========================================================================== */
 
 :root {
 
@@ -28,6 +31,7 @@
    * ======================================================================== */
 
   --max-content-width:     1000px;
+  --modal-dialog-width:    800px;
 
   /* == Media queries breakpoints
    * Define the breakpoints at which your layout will change, adapting to different screen sizes.
