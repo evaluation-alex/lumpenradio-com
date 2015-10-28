@@ -11,9 +11,10 @@ The new Lumpen Radio is an evolution of the mind.
 
 ### Features
 
-- Data fetching from [Firebase](https://www.firebase.com/).
+- Remote data and Authentication with [Firebase](https://www.firebase.com/).
 - [Isomorphic rendering](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/) of Firebase data.
 - [Alt](http://alt.js.org/) as a lightweight [Flux](http://alt.js.org) implementation.
+- Leverages [Material UI](http://material-ui.com) for access to robust pre-assembled components.
 - BEM-style CSS components with Bootstrap inspired variables using [CSS Next](http://cssnext.io).
 - Markdown processing with [Showdown](https://github.com/showdownjs/showdown) (with XSS filter).
 
