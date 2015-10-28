@@ -3,26 +3,29 @@ import styles from './LoginModal.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 
+import {
+  FlatButton,
+  TextField
+} from 'material-ui/lib';
+
 @withStyles(styles)
 class LoginModal extends Component {
 
-  static propTypes = {
-    onClickCloseBtn: PropTypes.func.isRequired
-  };
-
   render() {
-    const { onClickCloseBtn } = this.props;
-
     return (
       <div className="LoginModal">
         <div className="LoginModal-container">
-          <h2>Hello</h2>
-          <button onClick={onClickCloseBtn.bind(this)}>close</button>
-          <div>I am a modal</div>
           <form onSubmit={(evt) => {evt.preventDefault()} }>
-            <input />
-            <input />
-            <button>tab navigation</button>
+            <TextField
+              style={{display:'block'}}
+              hintText="jdoe@gmail.com"
+              floatingLabelText="Email"
+              type="email" />
+            <TextField
+              style={{display:'block'}}
+              hintText=",mA]@x[px#L\oj9E"
+              floatingLabelText="Password"
+              type="password" />
           </form>
         </div>
       </div>
